@@ -249,6 +249,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-20
 
 DEPENDENCIES
   autoprefixer-rails
@@ -280,7 +281,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.6.0p0
 
 BUNDLED WITH
-   1.16.6
+   2.2.0

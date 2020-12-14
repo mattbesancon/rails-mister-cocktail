@@ -1,6 +1,6 @@
 <h1>My cocktails</h1>
 
-<%= cl_image_tag("nraeryxrwzhmuaacguwf",
+<%= cl_image_tag("mojito-cocktails-814a3f7_gkllij",
       width: 400, height: 300, crop: :fill) %>
 
 <% @cocktails.each do |cocktail| %>
@@ -8,4 +8,3 @@
   <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
   </li>
 <% end %>
-
