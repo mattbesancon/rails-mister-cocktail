@@ -2,5 +2,18 @@
 
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @cocktail, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Original Score: <%= rating_for @cocktail, "original_score" %>
+    <% end %>
+  </div>
+</div>
+
 <%= link_to "Back to cocktails", cocktails_path %>
 <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail.id) %>
+
