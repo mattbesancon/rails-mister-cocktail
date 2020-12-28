@@ -8,10 +8,11 @@
 
 require 'json'
 require 'rest-client'
+require "open-uri"
 
-response = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+response = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
 repos = JSON.parse(response)
-
+ 
 repos["drinks"].each do |x|
-    Cocktail.create(name: x["strIngredient1"])
+    Cocktail.create(name: x["strDrink"])
 end
