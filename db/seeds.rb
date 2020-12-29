@@ -8,7 +8,6 @@
 
 require 'json'
 require 'rest-client'
-require "open-uri"
 
 response = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
 repos = JSON.parse(response)
