@@ -1,9 +1,15 @@
 <h1>My cocktails</h1>
 
 <% @cocktails.each do |cocktail| %>
-  <li>
-  <%#= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-  </li>
+  <div class="card-cocktail">
+    <div class="card-cocktail-img">
+      <%= image_tag(cocktail.photo, size: "300x300") %>
+    </div>
+    <div class="card-cocktail-infos">
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+      <p>Cocktail description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+  <br>
 <% end %>
 <br>

@@ -14,5 +14,5 @@ response = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/filter.ph
 repos = JSON.parse(response)
  
 repos["drinks"].each do |x|
-    Cocktail.create(name: x["strDrink"])
+    Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"])
 end
