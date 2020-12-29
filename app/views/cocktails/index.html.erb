@@ -1,5 +1,6 @@
-<h1>My cocktails</h1>
-
+<br>
+<h1 class="card-cocktail-title">Les cocktails au menu</h1>
+<br>
 <% @cocktails.each do |cocktail| %>
   <div class="card-cocktail">
     <div class="card-cocktail-img">
@@ -7,7 +8,7 @@
     </div>
     <div class="card-cocktail-infos">
       <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
-      <p>Cocktail description with <strong>relevant info</strong> only.</p>
+      <p>Description type pour chaque cocktail.</p>
     </div>
   </div>
   <br>
