@@ -5,32 +5,37 @@
     background-color: lightgray;
     height: 100vh;
 }
-.cocktail-show-first-container {
 
+.cocktail-show-main-container {
+    // center according to the navbar
 }
 
-.cocktail-show-first-container-item {
-    width: 75px;
-    height: 15px;
+.cocktail-show-first-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 500px;
+    height: 25px;
     color: grey;
+    background-color: white;
     padding: 20px;
-    position: relative;
     margin: 40px;
     float: left;
 }
 
+.cocktail-show-first-container-item {
+    color: grey;
+    background-color: white;
+    padding: 5px;
+}
+
 .cocktail-show-first-container-item:after {
-    position: absolute;
-    right: -15px;
-    top: 15px;
-    border-top: 15px solid transparent;
-    border-right: none;
-    border-left: 15px solid black;
-    border-bottom: 15px solid transparent;
+    
 }
 
 .cocktail-show-first-container-cocktail-item {
-
+    color: white;
+    background-color: #ffc107;
 }
 
 .cocktail-show-second-container {
