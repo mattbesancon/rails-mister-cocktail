@@ -6,9 +6,18 @@
       <div class="cocktail-show-first-container-cocktail-item"><%= @cocktail.name %></div>
     </div>
     <div class="cocktail-show-second-container">
-      <div class="cocktail-show-title"></div>
+      <div class="cocktail-show-second-container-main-elements">
+        <div class="cocktail-show-title"><%= @cocktail.name %></div>
+        <div class="cocktail-show-rating">5 stars</div>
+        <div class="cocktail-show-photo"><%= image_tag(@cocktail.photo) %></div>
+      </div>
       <div class="cocktail-show-doses"></div>
-      <div class="cocktail-show-description"></div>
+      <div class="cocktail-show-description">
+        <div class="cocktail-show-instruction">
+        </div>
+        <div class="cocktail-show-tags">
+        </div>
+      </div>
     </div>
     <div class="cocktail-show-third-container">
       <div class="cocktail-show-properties"></div>
@@ -20,7 +29,6 @@
     </div>
   </div>
 </div>
-
 
 
 

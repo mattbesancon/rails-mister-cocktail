@@ -13,36 +13,68 @@
 .cocktail-show-first-container {
     display: flex;
     justify-content: start;
-    align-items: center;
-    width: 500px;
-    height: 25px;
-    color: grey;
-    background-color: white;
-    padding: 20px;
-    margin: 40px;
-    float: left;
+    align-items: center;    
 }
 
 .cocktail-show-first-container-item {
     color: grey;
     background-color: white;
-    padding: 5px;
+    width: 75px;
+    height: 25px;
+    margin-top: 10px;
+    float: left;
 }
 
-.cocktail-show-first-container-item:after {
-    
+.cocktail-show-first-container-item {
+    margin-right: 25px;
+}
+
+.cocktail-show-first-container-item::after {
+    content: " ";
+    position: absolute;
+    right: -5px;
+    top: 5px;
+    border-top: 5px solid transparent;
+    border-right: none;
+    border-left: 5px solid black;
+    border-bottom: 5px solid transparent;
 }
 
 .cocktail-show-first-container-cocktail-item {
     color: white;
     background-color: #ffc107;
+    width: 300px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
 }
 
 .cocktail-show-second-container {
+    color: grey;
+    background-color: white;
+    width: 800px;
+    height: 800px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
+.cocktail-show-second-container-main-elements {
+    
 }
 
 .cocktail-show-title {
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    margin-left: 5px;
+}
+
+.cocktail-show-rating {
+    margin-left: 5px;
+}
+
+.cocktail-show-photo {
 
 }
 
@@ -51,6 +83,14 @@
 }
 
 .cocktail-show-description {
+
+}
+
+.cocktail-show-instruction {
+
+}
+
+.cocktail-show-tags {
 
 }
 
