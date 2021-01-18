@@ -22,8 +22,13 @@ ActiveRecord::Schema.define(version: 2020_12_29_143511) do
     t.string "photo"
     t.text "description"
     t.string "category"
-    t.string "capacity"
-    t.string "complexity"
+    t.string "capacity", default: "medium"
+    t.string "complexity", default: "medium"
+  end
+
+  create_table "decimals", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "number1", null: false
+    t.integer "number2", null: false
   end
 
   create_table "doses", force: :cascade do |t|

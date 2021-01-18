@@ -9,9 +9,10 @@
 require 'json'
 require 'rest-client'
 
-response = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
-repos = JSON.parse(response)
- 
-repos["drinks"].each do |x|
-    Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"])
-end
+30.times {
+    result = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    response = JSON.parse(result)
+    response["drinks"].each do |x|
+        Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+    end
+}
