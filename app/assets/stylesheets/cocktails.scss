@@ -4,16 +4,23 @@
 .body {
     background-color: lightgray;
     height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
-.cocktail-show-main-container {
-    // center according to the navbar
+.cocktail-show-left-side {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    border: solid black;
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
 .cocktail-show-first-container {
     display: flex;
-    justify-content: start;
-    align-items: center;    
+    justify-content: start;    
 }
 
 .cocktail-show-first-container-item {
@@ -22,13 +29,11 @@
     width: 75px;
     height: 25px;
     margin-top: 10px;
+    margin-left: 10px;
     float: left;
 }
 
-.cocktail-show-first-container-item {
-    margin-right: 25px;
-}
-
+/*
 .cocktail-show-first-container-item::after {
     content: " ";
     position: absolute;
@@ -39,6 +44,7 @@
     border-left: 5px solid black;
     border-bottom: 5px solid transparent;
 }
+*/
 
 .cocktail-show-first-container-cocktail-item {
     color: white;
@@ -53,8 +59,8 @@
 .cocktail-show-second-container {
     color: grey;
     background-color: white;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -78,7 +84,7 @@
 
 }
 
-.cocktail-show-doses {
+.cocktail-show-second-container-doses {
 
 }
 
@@ -90,12 +96,17 @@
 
 }
 
-.cocktail-show-tags {
-
+.cocktail-show-right-side {
+    color: grey;
+    border: solid black;
+    margin-right: 200px;
+    margin-top: 20px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
 }
 
 .cocktail-show-third-container {
-
+    
 }
 
 .cocktail-show-properties {
@@ -108,6 +119,17 @@
 
 .cocktail-show-ingredients {
 
+}
+
+.cocktail-show-bottom-side {
+    color: grey;
+    border: solid black;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
 }
 
 .cocktail-show-fourth-container {
