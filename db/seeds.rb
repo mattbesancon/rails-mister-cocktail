@@ -13,6 +13,12 @@ require 'rest-client'
     result = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     response = JSON.parse(result)
     response["drinks"].each do |x|
-        Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+        cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+        ingredient1 = Ingredient.create(name: x["strIngredient1"])
+        dose1 = Dose.create(description: x["strMeasure1"], cocktail_id: cocktail.id, ingredient_id: ingredient1.id)
+        ingredient2 = Ingredient.create(name: x["strIngredient2"])
+        dose2 = Dose.create(description: x["strMeasure2"], cocktail_id: cocktail.id, ingredient_id: ingredient2.id)
+        ingredient3 = Ingredient.create(name: x["strIngredient3"])
+        dose3 = Dose.create(description: x["strMeasure3"], cocktail_id: cocktail.id, ingredient_id: ingredient3.id)
     end
 }
