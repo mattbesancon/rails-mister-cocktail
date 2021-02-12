@@ -50,8 +50,19 @@
       <div class="cocktail-show-suggestions"></div>
     </div>
   </div>
+  <div class="cocktail-show-previous-next">
+    <div class="cocktail-show-previous"> 
+      <% if @cocktail.previous %>
+        <%= link_to "< Previous", @cocktail.previous %>
+      <% end %>
+    </div>
+    <div class="cocktail-show-previous">
+      <% if @cocktail.next %>
+        <%= link_to "Next >", @cocktail.next %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
 
 
 
