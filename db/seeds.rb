@@ -9,16 +9,16 @@
 require 'json'
 require 'rest-client'
 
-30.times {
+10.times {
     result = RestClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     response = JSON.parse(result)
     response["drinks"].each do |x|
         cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
-        ingredient1 = Ingredient.create(name: x["strIngredient1"])
-        dose1 = Dose.create(description: x["strMeasure1"], cocktail_id: cocktail.id, ingredient_id: ingredient1.id)
-        ingredient2 = Ingredient.create(name: x["strIngredient2"])
-        dose2 = Dose.create(description: x["strMeasure2"], cocktail_id: cocktail.id, ingredient_id: ingredient2.id)
-        ingredient3 = Ingredient.create(name: x["strIngredient3"])
-        dose3 = Dose.create(description: x["strMeasure3"], cocktail_id: cocktail.id, ingredient_id: ingredient3.id)
+        (1..15).each do |i|
+            if x["strIngredient#{i}"] != nil
+                new_ing = Ingredient.create(name: x["strIngredient#{i}"])
+                new_dose = Dose.create(description: x["strMeasure#{i}"], cocktail_id: cocktail.id, ingredient_id: new_ing.id)
+            end
+        end
     end
 }
