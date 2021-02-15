@@ -26,7 +26,8 @@
         </div>
         <div class="cocktail-show-second-container-doses-quantity-ingredients">
           <% @cocktail.doses.each do |cocktail| %>
-            <%= cocktail.description %>
+            <span id="quantity"><%= cocktail.description.delete("^0-9") %></span>
+            <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
             <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
             <br>
           <% end %>
