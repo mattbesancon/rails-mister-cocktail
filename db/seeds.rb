@@ -15,8 +15,14 @@ require 'rest-client'
     response["drinks"].each do |x|
         cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
         (1..15).each do |i|
-            if x["strIngredient#{i}"] != nil
-                new_ing = Ingredient.create(name: x["strIngredient#{i}"])
+            el = x["strIngredient#{i}"] 
+            if el != nil
+                new_ing = Ingredient.create(name: el)
+                res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
+                resp = JSON.parse(res)
+                if resp["ingredients"][0]["strAlcohol"] == "Yes"
+                    new_ing.liquor == true
+                end  
                 new_dose = Dose.create(description: x["strMeasure#{i}"], cocktail_id: cocktail.id, ingredient_id: new_ing.id)
             end
         end
