@@ -1,0 +1,15 @@
+current directory: /Users/matthieubesancon/code/mattbesancon/rails-mister-cocktail/bundle/vendor/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/Users/matthieubesancon/.rbenv/versions/2.6.3/bin/ruby -I /Users/matthieubesancon/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210316-15429-2bgvd6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matthieubesancon/code/mattbesancon/rails-mister-cocktail/bundle/vendor/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/matthieubesancon/code/mattbesancon/rails-mister-cocktail/bundle/vendor/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/matthieubesancon/code/mattbesancon/rails-mister-cocktail/bundle/vendor/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210316-15429-sabn91

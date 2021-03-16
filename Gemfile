@@ -69,4 +69,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'ratyrate'
 gem 'devise'
-
+gem 'sassc'
