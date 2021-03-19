@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_143511) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "liquor"
+    t.boolean "liquor", default: false
   end
 
   create_table "users", force: :cascade do |t|
