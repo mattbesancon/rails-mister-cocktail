@@ -20,6 +20,7 @@ require 'rest-client'
             el = x["strIngredient#{j}"] 
             if el.nil? == false && Ingredient.find_by_name(el).nil?
                 new_ing = Ingredient.create(name: el)
+                # double interpolation (see probable solution there: https://exceptionshub.com/in-ruby-can-you-perform-string-interpolation-on-data-read-from-a-file-2.html)
                 res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
                 resp = JSON.parse(res)
                 if resp["ingredients"][0]["strAlcohol"] == "Yes"
