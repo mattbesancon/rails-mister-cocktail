@@ -18,14 +18,15 @@
               Dropdown button
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-show-item" href="#">1</a>
-              <a class="dropdown-show-item" href="#">2</a>
-              <a class="dropdown-show-item" href="#">3</a>
+              <li><a class="dropdown-show-item 1" href="#">1</a></li>
+              <li><a class="dropdown-show-item 2" href="#">2</a></li>
+              <li><a class="dropdown-show-item 3" href="#">3</a></li>
             </div>
           </div>
         </div>
         <div class="cocktail-show-second-container-doses-quantity-ingredients">
           <% @cocktail.doses.each do |cocktail| %>
+              <input type="textbox" id="result" class="form-control">
               <% if cocktail.description != nil %>
                 <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
               <% end %>
