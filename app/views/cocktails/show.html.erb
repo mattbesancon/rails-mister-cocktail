@@ -66,7 +66,32 @@
   </div>
   <div class="cocktail-show-bottom-side">
     <div class="cocktail-show-fourth-container">
-      <div class="cocktail-show-suggestions"></div>
+      <div class="cocktail-show-boxes">
+        <div class="box-cocktail">
+          <br>
+            <div class="box-cocktail-infos">
+              <% box_cocktail1 = Cocktail.order('RANDOM()')[0] %>
+              <%= image_tag(box_cocktail1.photo, size: "30x30") %>
+              <p><%= box_cocktail1.name %></p>
+              <p><%= box_cocktail1.description %></p>
+            </div>
+
+            <div class="box-cocktail-infos">
+              <% box_cocktail2 = Cocktail.order('RANDOM()')[1] %>
+              <%= image_tag(box_cocktail2.photo, size: "30x30") %>
+              <p><%= box_cocktail2.name %></p>
+              <p><%= box_cocktail2.description %></p>
+            </div>
+
+            <div class="box-cocktail-infos">
+              <% box_cocktail3 = Cocktail.order('RANDOM()')[2] %>
+              <%= image_tag(box_cocktail3.photo, size: "30x30") %>
+              <p><%= box_cocktail3.name %></p>
+              <p><%= box_cocktail3.description %></p>
+            </div>
+          <br>
+        </div>
+      </div>
     </div>
   </div>
   <div class="cocktail-show-previous-next">
