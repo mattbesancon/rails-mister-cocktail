@@ -55,7 +55,12 @@
         <img src="https://www.thecocktaildb.com/images/ingredients/tequila-Medium.png" alt="ingredient-image">
       </div>
       <div class="cocktail-show-ingredients">
-
+        <h2>Ingredients utilisés</h2>
+        <% @cocktail.doses.each do |cocktail| %>
+            <br>
+            <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+            <br>
+          <% end %>
       </div>
     </div>
   </div>
