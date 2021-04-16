@@ -1,4 +1,6 @@
 class Cocktail < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: [:name]
   validates :name, presence: true, uniqueness: true, allow_blank: false
   validates :photo, presence: true
   has_many :doses, dependent: :destroy
