@@ -32,26 +32,27 @@ require 'rest-client'
 end
 
 
-
-=begin
-(10..60).each do |i|
-    result = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=1100#{i}")
+(10..30).each do |i|
+    result = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=110#{i}")
     response = JSON.parse(result)
-    response["drinks"].each do |x|
-        cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
-        (1..15).each do |j|
-            el = x["strIngredient#{j}"]
-            if el.nil? == false && Ingredient.find_by_name(el).nil?            
-                new_ing = Ingredient.create(name: el)
-                res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
-                resp = JSON.parse(res)
-                if resp["ingredients"][0]["strAlcohol"] == "Yes"
-                    new_ing.liquor = true
-                    new_ing.save
-                end 
-                new_dose = Dose.create(description: x["strMeasure#{j}"], cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
+    if response["drinks"].nil?
+        return
+    else
+        response["drinks"].each do |x|
+            cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+            (1..15).each do |j|
+                el = x["strIngredient#{j}"]
+                if el.nil? == false && Ingredient.find_by_name(el).nil?            
+                    new_ing = Ingredient.create(name: el)
+                    res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
+                    resp = JSON.parse(res)
+                    if resp["ingredients"][0]["strAlcohol"] == "Yes"
+                        new_ing.liquor = true
+                        new_ing.save
+                    end 
+                    new_dose = Dose.create(description: x["strMeasure#{j}"], cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
+                end
             end
         end
     end
 end
-=end
