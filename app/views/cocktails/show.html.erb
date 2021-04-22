@@ -52,11 +52,18 @@
         <p>Difficulté: <%= @cocktail.complexity %></p>
       </div>
       <div class="cocktail-show-liquor">
-        <img src="https://www.thecocktaildb.com/images/ingredients/tequila-Medium.png" alt="ingredient-image">
+          <% @cocktail.doses.each do |cocktail| %>
+            <br>
+              <% selected_ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <% if selected_ing.liquor = true %>
+                <%= image_tag(selected_ing.photo, size: "400x500") %>
+              <% end  %>
+            <br>
+          <% end %>
       </div>
       <div class="cocktail-show-ingredients">
         <h2>Ingredients utilisés</h2>
-        <% @cocktail.doses.each do |cocktail| %>
+          <% @cocktail.doses.each do |cocktail| %>
             <br>
             <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
             <br>
