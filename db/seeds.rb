@@ -20,7 +20,11 @@ require 'rest-client'
             if el.nil? == false && Ingredient.find_by_name(el).nil?
                 arr = el.split(" ")
                 str = arr.join("%20")
+                # => "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg"
+                # => "www.thecocktaildb.com/images/ingredients/Ginger%20ale.png"
+                # The problem probably comes from the URL not from the asset pipeline
                 new_ing = Ingredient.create(name: el, photo: "www.thecocktaildb.com/images/ingredients/#{str}.png")
+                # Same problem with RestClient : how to handle the space in the search ?
                 res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
                 resp = JSON.parse(res)
                 if resp["ingredients"][0]["strAlcohol"] == "Yes"
