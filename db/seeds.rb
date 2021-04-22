@@ -17,8 +17,10 @@ require 'rest-client'
         cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
         (1..15).each do |j|
             el = x["strIngredient#{j}"]
-            if el.nil? == false && Ingredient.find_by_name(el).nil?            
-                new_ing = Ingredient.create(name: el, photo: "www.thecocktaildb.com/images/ingredients/#{el}.png")
+            if el.nil? == false && Ingredient.find_by_name(el).nil?
+                arr = el.split(" ")
+                str = arr.join("%20")
+                new_ing = Ingredient.create(name: el, photo: "www.thecocktaildb.com/images/ingredients/#{str}.png")
                 res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
                 resp = JSON.parse(res)
                 if resp["ingredients"][0]["strAlcohol"] == "Yes"
