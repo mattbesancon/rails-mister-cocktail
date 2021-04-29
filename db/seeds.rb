@@ -9,6 +9,7 @@
 require 'json'
 require 'rest-client'
 require 'open-uri'
+require 'nokogiri'
 
 
 (0..9).each do |i|
@@ -21,25 +22,27 @@ require 'open-uri'
             if el.nil? == false && Ingredient.find_by_name(el).nil?
                 arr = el.split(" ")
                 str = arr.join("%20")
-                # Since it is dynamic display, need to fetch the images from url
                 url = "https://www.thecocktaildb.com/images/ingredients/#{str}.png"
-                ing_resp_serialized = URI.open(url).read
-                
-                # The problem comes from parsing the files
-                ing_resp= JSON.parse(ing_resp_serialized)
-                puts(ing_resp_serialized)
 
-                new_ing = Ingredient.create(name: el, photo: "www.thecocktaildb.com/images/ingredients/#{str}.png")
-                # Same problem with RestClient : how to handle the space in the search ?
+                # Nokogiri version
+
+                # html_file = URI.open(url).read
+                # html_doc = Nokogiri::HTML(html_file)
+
+
+                # check ImageMagick
+
+                new_ing = Ingredient.create(name: el, photo: "https://www.thecocktaildb.com/images/ingredients/#{str}.png")
                 res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
                 resp = JSON.parse(res)
                 if resp["ingredients"][0]["strAlcohol"] == "Yes"
                     new_ing.liquor = true
                     new_ing.save
                 end 
-                new_dose = Dose.create(description: x["strMeasure#{j}"], cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
+                new_dose = Dose.create(description: el, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
             end
         end
     end
 end
+
 
