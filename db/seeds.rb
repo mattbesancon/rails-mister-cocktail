@@ -8,8 +8,6 @@
 
 require 'json'
 require 'rest-client'
-require 'open-uri'
-require 'nokogiri'
 
 
 (0..9).each do |i|
@@ -22,16 +20,6 @@ require 'nokogiri'
             if el.nil? == false && Ingredient.find_by_name(el).nil?
                 arr = el.split(" ")
                 str = arr.join("%20")
-                url = "https://www.thecocktaildb.com/images/ingredients/#{str}.png"
-
-                # Nokogiri version
-
-                # html_file = URI.open(url).read
-                # html_doc = Nokogiri::HTML(html_file)
-
-
-                # check ImageMagick
-
                 new_ing = Ingredient.create(name: el, photo: "https://www.thecocktaildb.com/images/ingredients/#{str}.png")
                 res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
                 resp = JSON.parse(res)
