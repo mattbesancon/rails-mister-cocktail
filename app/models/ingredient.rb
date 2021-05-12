@@ -4,12 +4,4 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   has_many :cocktails, through: :doses
   has_many :doses
-
-  def alc
-    Ingredient.where(["liquor = ?", true])
-  end
-  
-  def non_alc
-    Ingredient.where(["liquor = ?", false])
-  end
 end
