@@ -55,9 +55,7 @@
           <% @cocktail.doses.each do |cocktail| %>
             <br>
               <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% if ing.liquor = true %>
-                <%= image_tag(ing.photo, size: "400x500") %>
-              <% end %>
+              <%= image_tag(ing.photo, size: "400x500") if ing.liquor = true %>
             <br>
           <% end %>
       </div>
@@ -66,9 +64,7 @@
           <% @cocktail.doses.each do |cocktail| %>
             <br>
               <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% if ing.liquor = false %>
-                <%= image_tag(ing.photo, size: "400x500") %>
-              <% end %>
+              <%= image_tag(ing.photo, size: "400x500") if ing.liquor = false %>
             <br>
           <% end %>
       </div>
