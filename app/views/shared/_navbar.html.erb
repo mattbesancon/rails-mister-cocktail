@@ -23,7 +23,7 @@
         <a class="nav-link" href="#">Boutique</a>
       </li>
     </ul>
-    <div class="navbar-newsletter"><%= link_to "Newsletter", "#", class: "btn btn-warning" %></div>
+    <div class="navbar-newsletter"><%= link_to "Newsletter", inscription_club_path, class: "btn btn-warning" %></div>
     <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
