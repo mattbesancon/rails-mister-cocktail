@@ -51,20 +51,12 @@
         <p>Contenance: <%= @cocktail.capacity %></p>
         <p>Difficulté: <%= @cocktail.complexity %></p>
       </div>
-      <div class="cocktail-show-liquor">
-          <% @cocktail.doses.each do |cocktail| %>
-            <br>
-              <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <%= image_tag(ing.photo, size: "400x500") if ing.liquor = true %>
-            <br>
-          <% end %>
-      </div>
       <div class="cocktail-show-ingredients">
-        <h2>Autres ingredients utilisés</h2>
+        <h2>Tous les ingredients utilisés</h2>
           <% @cocktail.doses.each do |cocktail| %>
             <br>
               <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <%= image_tag(ing.photo, size: "400x500") if ing.liquor = false %>
+              <%= image_tag(ing.photo, size: "80x100") %>
             <br>
           <% end %>
       </div>
