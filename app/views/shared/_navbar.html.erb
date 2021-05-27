@@ -8,19 +8,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Cocktails
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Tous les cocktails</a>
-          <a class="dropdown-item" href="#">Les classiques</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Les mieux notés</a>
-        </div>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Boutique</a>
+        <%= link_to "All cocktails", cocktails_path, class: "nav-link" %>
       </li>
     </ul>
     <div class="navbar-newsletter"><%= link_to "Newsletter", inscription_club_path, class: "btn btn-warning" %></div>
