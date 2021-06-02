@@ -1,7 +1,8 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
-  get "/inscription-club", to: "pages#newsletter"
+  resources :newsletters
+  get 'newsletters/send'
   resources :cocktails do
     resources :doses, only: [:index, :new, :show]
   end
