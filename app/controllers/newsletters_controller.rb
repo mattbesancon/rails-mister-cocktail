@@ -1,9 +1,5 @@
 class NewslettersController < ApplicationController
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @newsletters = Newsletter.all
-  end
+  before_action :set_newsletter, only: [:destroy]
 
   def new
     @newsletter = Newsletter.new
@@ -15,28 +11,14 @@ class NewslettersController < ApplicationController
     redirect_to newsletters_path(@newsletter)
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-    @newsletter = Newsletter.update(newsletter_params)
-    redirect_to newsletters_path(@newsletter)
-  end
-
   def destroy
     @newsletter.destroy
     redirect_to newsletters_path
   end
 
   def send
-    @newsletter = Newsletter.find(:params[:id])
-    @users = User.all
-    @users.each do |user|
-      Newsletter.newsletter_email(user, @newsletter).deliver
-    end
+    @newsletter = Newsletter.find(:params[:email])
+    Newsletter.newsletter_email(@newsletter.email, @newsletter).deliver
   end
 
   private
