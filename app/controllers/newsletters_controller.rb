@@ -8,17 +8,17 @@ class NewslettersController < ApplicationController
   def create
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.save
-    redirect_to newsletters_path(@newsletter)
+    if @newsletter.save
+      NewsletterMailer.newsletter_email(@newsletter).deliver
+      redirect_to root_path, notice: "Thank you, you can check your inbox, you should have received an email."
+    else
+      redirect_to new_newsletter_path, notice: "There is an issue with your email. Please try again."      
+    end
   end
 
   def destroy
     @newsletter.destroy
     redirect_to newsletters_path
-  end
-
-  def send
-    @newsletter = Newsletter.find(:params[:email])
-    Newsletter.newsletter_email(@newsletter.email, @newsletter).deliver
   end
 
   private
