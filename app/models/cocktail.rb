@@ -5,7 +5,6 @@ class Cocktail < ApplicationRecord
   validates :photo, presence: true
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
-  ratyrate_rateable 'original_score'
   
   def previous
     Cocktail.where(["id < ?", id]).last
