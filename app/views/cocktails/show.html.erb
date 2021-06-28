@@ -1,106 +1,93 @@
 <div class="body">
+  <div class="cocktail-show-top-side">
+    <div class="cocktail-show-top-side item 1">Accueil</div>
+    <div class="cocktail-show-top-side item 2">Cocktails</div>
+    <div class="cocktail-show-top-side item 3"><%= @cocktail.name %></div>
+  </div>
   <div class="cocktail-show-left-side">
-    <div class="cocktail-show-first-container">
-      <div class="cocktail-show-first-container-item">Accueil</div>
-      <div class="cocktail-show-first-container-item">Cocktails</div>
-      <div class="cocktail-show-first-container-cocktail-item"><%= @cocktail.name %></div>
+    <div class="cocktail-show-left-side title photo">
+      <div class="cocktail-show-left-side title"><h1><%= @cocktail.name %></div>
+      <div class="cocktail-show-left-side photo"><%= image_tag(@cocktail.photo, size: "400x500") %></div>
     </div>
-    <div class="cocktail-show-second-container">
-      <div class="cocktail-show-second-container-main-elements">
-        <div class="cocktail-show-title"><h1><%= @cocktail.name %></div>
-        <div class="cocktail-show-photo"><%= image_tag(@cocktail.photo, size: "400x500") %></div>
-      </div>
-      <div class="cocktail-show-second-container-doses">
-        <div class="cocktail-show-second-container-doses-dropdown">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-show-item 1" href="#">1</a></li>
-              <li><a class="dropdown-show-item 2" href="#">2</a></li>
-              <li><a class="dropdown-show-item 3" href="#">3</a></li>
-            </div>
-          </div>
+    <div class="cocktail-show-left-side doses">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-show-item 1" href="#">1</a></li>
+          <li><a class="dropdown-show-item 2" href="#">2</a></li>
+          <li><a class="dropdown-show-item 3" href="#">3</a></li>
         </div>
-        <div class="cocktail-show-second-container-doses-quantity-ingredients">
-          <% @cocktail.doses.each do |cocktail| %>
-              <% if cocktail.description != nil %>
-                <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
-              <% end %>
-              <% if cocktail.description != nil %>
-                <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
-              <% end %>
-            <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
-            <br>
+      </div>
+      <% @cocktail.doses.each do |cocktail| %>
+          <% if cocktail.description != nil %>
+            <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
           <% end %>
-          <input type="textbox" id="result" class="form-control">
-        </div>
-      </div>
-      <div class="cocktail-show-description">
-        <h2>Recipe</h2>
-        <%= @cocktail.description %>
-      </div>
+          <% if cocktail.description != nil %>
+            <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
+          <% end %>
+        <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+        <br>
+      <% end %>
+    </div>  
+    <div class="cocktail-show-left-side description">
+      <h2>Recipe</h2>
+      <%= @cocktail.description %>
     </div>
   </div>
   <div class="cocktail-show-right-side">
-    <div class="cocktail-show-third-container">
-      <div class="cocktail-show-properties">
-        <p>Type: <%= @cocktail.category %></p>
-        <p>Contenance: <%= @cocktail.capacity %></p>
-        <p>Difficulté: <%= @cocktail.complexity %></p>
-      </div>
-      <div class="cocktail-show-ingredients">
-        <h2>Tous les ingredients utilisés</h2>
-          <% @cocktail.doses.each do |cocktail| %>
-            <br>
-              <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <%= image_tag(ing.photo, size: "80x100") %>
-            <br>
-          <% end %>
-      </div>
+    <div class="cocktail-show-right-side properties">
+      <p>Type: <%= @cocktail.category %></p>
+      <p>Contenance: <%= @cocktail.capacity %></p>
+      <p>Difficulté: <%= @cocktail.complexity %></p>
+    </div>
+    <div class="cocktail-show-right-side ingredients">
+      <h2>Tous les ingredients utilisés</h2>
+      <% @cocktail.doses.each do |cocktail| %>
+        <br>
+          <% ing = Ingredient.find_by_id(cocktail.ingredient_id) %>
+          <%= image_tag(ing.photo, size: "80x100") %>
+        <br>
+      <% end %>
     </div>
   </div>
   <div class="cocktail-show-bottom-side">
-    <div class="cocktail-show-fourth-container">
-      <div class="cocktail-show-boxes">
-        <div class="box-cocktail">
-          <br>
-            <div class="box-cocktail-infos">
-              <% box_cocktail1 = Cocktail.order('RANDOM()')[0] %>
-              <%= image_tag(box_cocktail1.photo, size: "30x30") %>
-              <p><%= box_cocktail1.name %></p>
-              <p><%= box_cocktail1.description %></p>
-            </div>
-
-            <div class="box-cocktail-infos">
-              <% box_cocktail2 = Cocktail.order('RANDOM()')[1] %>
-              <%= image_tag(box_cocktail2.photo, size: "30x30") %>
-              <p><%= box_cocktail2.name %></p>
-              <p><%= box_cocktail2.description %></p>
-            </div>
-
-            <div class="box-cocktail-infos">
-              <% box_cocktail3 = Cocktail.order('RANDOM()')[2] %>
-              <%= image_tag(box_cocktail3.photo, size: "30x30") %>
-              <p><%= box_cocktail3.name %></p>
-              <p><%= box_cocktail3.description %></p>
-            </div>
-          <br>
+    <div class="cocktail-show-bottom-side suggestions">
+      <br>
+        <div class="cocktail-show-bottom-side suggestion 1">
+          <% box_cocktail1 = Cocktail.order('RANDOM()')[0] %>
+          <%= image_tag(box_cocktail1.photo, size: "30x30") %>
+          <p><%= box_cocktail1.name %></p>
+          <p><%= box_cocktail1.description %></p>
         </div>
+
+        <div class="cocktail-show-bottom-side suggestion 2">
+          <% box_cocktail2 = Cocktail.order('RANDOM()')[1] %>
+          <%= image_tag(box_cocktail2.photo, size: "30x30") %>
+          <p><%= box_cocktail2.name %></p>
+          <p><%= box_cocktail2.description %></p>
+        </div>
+
+        <div class="cocktail-show-bottom-side suggestion 3">
+          <% box_cocktail3 = Cocktail.order('RANDOM()')[2] %>
+          <%= image_tag(box_cocktail3.photo, size: "30x30") %>
+          <p><%= box_cocktail3.name %></p>
+          <p><%= box_cocktail3.description %></p>
+        </div>
+      <br>
+    </div>
+    <div class="cocktail-show-bottom-side previous next">
+      <div class="cocktail-show-bottom-side previous"> 
+        <% if @cocktail.previous %>
+          <%= link_to "< Previous", @cocktail.previous %>
+        <% end %>
       </div>
-    </div>
-  </div>
-  <div class="cocktail-show-previous-next">
-    <div class="cocktail-show-previous"> 
-      <% if @cocktail.previous %>
-        <%= link_to "< Previous", @cocktail.previous %>
-      <% end %>
-    </div>
-    <div class="cocktail-show-previous">
-      <% if @cocktail.next %>
-        <%= link_to "Next >", @cocktail.next %>
-      <% end %>
+      <div class="cocktail-show-bottom-side next">
+        <% if @cocktail.next %>
+          <%= link_to "Next >", @cocktail.next %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
