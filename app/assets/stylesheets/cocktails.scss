@@ -1,160 +1,107 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .body {
-    background-color: lightgray;
-    height: 1600px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.cocktail-show-top-side {
+
+}
+
+.cocktail-show-top-side-item {
+
+}
+
+.cocktail-show-top-side-item.one {
+
+}
+
+.cocktail-show-top-side-item.two {
+
+}
+
+.cocktail-show-top-side-item.three {
+
 }
 
 .cocktail-show-left-side {
-    background-color: white;
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
-    border: solid black;
-    margin-left: 200px;
-    margin-top: 20px;
-    margin-right: 10px;
+
 }
 
-.cocktail-show-first-container {
-    display: flex;
-    justify-content: start;    
+.cocktail-show-left-side.title.photo {
+
 }
 
-.cocktail-show-first-container-item {
-    color: grey;
-    background-color: white;
-    width: 75px;
-    height: 25px;
-    margin-top: 10px;
-    margin-left: 10px;
-    float: left;
+.cocktail-show-left-side.title {
+
 }
 
-/*
-.cocktail-show-first-container-item::after {
-    content: " ";
-    position: absolute;
-    right: -5px;
-    top: 5px;
-    border-top: 5px solid transparent;
-    border-right: none;
-    border-left: 5px solid black;
-    border-bottom: 5px solid transparent;
-}
-*/
+.cocktail-show-left-side.photo {
 
-.cocktail-show-first-container-cocktail-item {
-    color: white;
-    background-color: #ffc107;
-    width: 300px;
-    height: 25px;
-    margin-top: 10px;
-    margin-left: 10px;
-    float: left;
 }
 
-.cocktail-show-second-container {
-    color: grey;
-    background-color: white;
-    width: 600px;
-    height: 600px;
-    margin-top: 10px;
-    margin-left: 10px;
+.cocktail-show-left-side.doses {
+
 }
 
-.cocktail-show-second-container-main-elements {
-    
+.cocktail-show-left-side.doses.dropdown {
+
 }
 
-.cocktail-show-title {
-    color: black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: xx-large;
-    font-weight: bold;
-    margin-left: 5px;
+.cocktail-show-left-side.doses.description {
+
 }
 
-.cocktail-show-rating {
-    margin-left: 5px;
-}
+.cocktail-show-left-side.recipe {
 
-.cocktail-show-photo {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-}
-
-.cocktail-show-second-container-doses {
-    background-color: #DCDCDC;
-    height: 200px;
-    width: 600px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.cocktail-show-description {
-    color: black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .cocktail-show-right-side {
-    background-color: white;
-    color: grey;
-    border: solid black;
-    margin-right: 200px;
-    margin-top: 20px;
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
+
 }
 
-.cocktail-show-third-container {
-    
+.cocktail-show-right-side.properties {
+
 }
 
-.cocktail-show-properties p {
-    background-color: white;
-    border: solid grey;
-}
+.cocktail-show-right-side.ingredients {
 
-.cocktail-show-liquor {
-    background-color: white;
-    border: solid grey;
-}
-
-.cocktail-show-ingredients {
-    background-color: white;
-    border: solid grey;
 }
 
 .cocktail-show-bottom-side {
-    background-color: white;
-    color: grey;
-    border: solid black;
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    margin-top: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 20px;
-}
-
-.cocktail-show-fourth-container {
 
 }
 
-.cocktail-show-boxes {
+.cocktail-show-bottom-side {
 
 }
 
-.cocktail-show-previous-next {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 200px;
+.cocktail-show-bottom-side-suggestion {
+
+}
+
+.cocktail-show-bottom-side-suggestion.one {
+
+}
+
+.cocktail-show-bottom-side-suggestion.two {
+
+}
+
+.cocktail-show-bottom-side-suggestion.three {
+
+}
+
+.cocktail-show-bottom-side.previous.next {
+
+}
+
+.cocktail-show-bottom-side.previous {
+
+}
+
+.cocktail-show-bottom-side.next {
+
 }
