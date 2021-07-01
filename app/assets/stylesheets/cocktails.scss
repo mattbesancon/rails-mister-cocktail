@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .body {
+    background-color: #EAEAEA;
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cocktail-show-top-side {
@@ -71,7 +77,7 @@
 }
 
 .cocktail-show-bottom-side {
-
+    
 }
 
 .cocktail-show-bottom-side {
