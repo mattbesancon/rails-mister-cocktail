@@ -33,6 +33,7 @@ document.getElementsByClassName('dropdown-menu li').addEventListener('click', ()
 });
 */
 
+// Check the scripts with multiple functions to do that
 
 
 
