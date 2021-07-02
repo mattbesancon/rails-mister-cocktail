@@ -10,11 +10,14 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+    width: 900px;
+    height: 1800px;
 }
 
 .cocktail-show-top-side {
     grid-column: 1 / 7;
-    grid-row: 1;
+    grid-row: 1 / 2;
     background-color: white;
 }
 
