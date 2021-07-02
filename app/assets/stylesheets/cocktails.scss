@@ -7,13 +7,15 @@
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .cocktail-show-top-side {
-
+    grid-column: 1 / 7;
+    grid-row: 1;
+    background-color: white;
 }
 
 .cocktail-show-top-side-item {
@@ -33,7 +35,9 @@
 }
 
 .cocktail-show-left-side {
-
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
+    background-color: white;
 }
 
 .cocktail-show-left-side.title.photo {
@@ -65,7 +69,9 @@
 }
 
 .cocktail-show-right-side {
-
+    grid-column: 5 / 7;
+    grid-row: 1 / 5;
+    background-color: white;
 }
 
 .cocktail-show-right-side.properties {
@@ -77,7 +83,9 @@
 }
 
 .cocktail-show-bottom-side {
-    
+    grid-column: 1 / 7;
+    grid-row: 6 / 7;
+    background-color: white;
 }
 
 .cocktail-show-bottom-side-suggestion {
