@@ -19,6 +19,7 @@
     grid-column: 1 / 7;
     grid-row: 1 / 2;
     background-color: white;
+    margin-top: 20px;
 }
 
 .cocktail-show-top-side-item {
@@ -39,7 +40,7 @@
 
 .cocktail-show-left-side {
     grid-column: 1 / 5;
-    grid-row: 1 / 5;
+    grid-row: 2 / 6;
     background-color: white;
 }
 
@@ -73,7 +74,7 @@
 
 .cocktail-show-right-side {
     grid-column: 5 / 7;
-    grid-row: 1 / 5;
+    grid-row: 2 / 6;
     background-color: white;
 }
 
@@ -89,6 +90,7 @@
     grid-column: 1 / 7;
     grid-row: 6 / 7;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 .cocktail-show-bottom-side-suggestion {
