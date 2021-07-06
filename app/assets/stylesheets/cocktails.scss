@@ -18,24 +18,72 @@
 .cocktail-show-top-side {
     grid-column: 1 / 7;
     grid-row: 1 / 2;
-    background-color: white;
+    background-color: #EAEAEA;
     margin-top: 20px;
 }
 
 .cocktail-show-top-side-item {
-
+    display: flex;
+    justify-content: start;
 }
 
 .cocktail-show-top-side-item.one {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background:white;
 
+}
+
+.cocktail-show-top-side-item.one::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
 }
 
 .cocktail-show-top-side-item.two {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background:white;
+}
 
+.cocktail-show-top-side-item.two::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
 }
 
 .cocktail-show-top-side-item.three {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background: #ffa500;
+    color: white;
+}
 
+.cocktail-show-top-side-item.three::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #ffa500;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
 }
 
 .cocktail-show-left-side {
