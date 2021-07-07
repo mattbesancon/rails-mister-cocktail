@@ -211,7 +211,9 @@
 }
 
 .cocktail-show-bottom-side.previous.next {
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cocktail-show-bottom-side.previous {
