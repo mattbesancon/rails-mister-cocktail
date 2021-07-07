@@ -28,11 +28,16 @@
 }
 
 .cocktail-show-top-side-item.one {
-    width: 120px;
+    width: 160px;
     height: 40px;
     position: relative;
     background:white;
     margin: 10px;
+    p {
+        left: 30px;
+        top: 5px;
+        position: relative;
+    }
 }
 
 .cocktail-show-top-side-item.one::before {
@@ -60,11 +65,16 @@
 }
 
 .cocktail-show-top-side-item.two {
-    width: 120px;
+    width: 160px;
     height: 40px;
     position: relative;
     background:white;
     margin: 10px;
+    p {
+        left: 30px;
+        top: 5px;
+        position: relative;
+    }
 }
 
 .cocktail-show-top-side-item.two::before {
@@ -92,12 +102,17 @@
 }
 
 .cocktail-show-top-side-item.three {
-    width: 120px;
+    width: 160px;
     height: 40px;
     position: relative;
     background: #ffa500;
     color: white;
     margin: 10px;
+    p {
+        left: 30px;
+        top: 5px;
+        position: relative;
+    }
 }
 
 .cocktail-show-top-side-item.three::before {
