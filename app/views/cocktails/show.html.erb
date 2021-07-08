@@ -42,39 +42,41 @@
       </div>
     </div>
     <div class="cocktail-show-right-side">
-      <div class="cocktail-show-right-side properties">
-        <p>Type: <%= @cocktail.category %></p>
-        <p>Contenance: <%= @cocktail.capacity %></p>
-        <p>Difficulté: <%= @cocktail.complexity %></p>
-      </div>
-      <div class="cocktail-show-right-side alc-ing">
-        <h2>Alc utilisé</h2>
-        <% @cocktail.doses.each do |cocktail| %>
-          <br>
-            <% ing = [] %>
-            <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-            <% ing.each do |x| %>
-              <% if x.liquor == true %>
-                <%= image_tag(x.photo, size: "80x100") %>
+      <div class="row">
+        <div class="cocktail-show-right-side properties">
+          <p>Type: <%= @cocktail.category %></p>
+          <p>Contenance: <%= @cocktail.capacity %></p>
+          <p>Difficulté: <%= @cocktail.complexity %></p>
+        </div>
+        <div class="cocktail-show-right-side alc-ing">
+          <h3>Alc utilisé</h3>
+          <% @cocktail.doses.each do |cocktail| %>
+            <br>
+              <% ing = [] %>
+              <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <% ing.each do |x| %>
+                <% if x.liquor == true %>
+                  <%= image_tag(x.photo, size: "80x100") %>
+                <% end %>
               <% end %>
-            <% end %>
-          <br>
-        <% end %>
-      </div>
-      <div class="cocktail-show-right-side non-alc-ing">
-        <h2>Tous les ingredients non alc utilisés</h2>
-        <% @cocktail.doses.each do |cocktail| %>
-          <br>
-            <% ing = [] %>
-            <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-            <% ing.each do |x| %>
-              <% if x.liquor == false %>
-                <%= image_tag(x.photo, size: "80x100") %>
+            <br>
+          <% end %>
+        </div>
+        <div class="cocktail-show-right-side non-alc-ing">
+          <h3>Tous les ingredients non alc utilisés</h3>
+          <% @cocktail.doses.each do |cocktail| %>
+            <br>
+              <% ing = [] %>
+              <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <% ing.each do |x| %>
+                <% if x.liquor == false %>
+                  <%= image_tag(x.photo, size: "80x100") %>
+                <% end %>
               <% end %>
-            <% end %>
-          <br>
-        <% end %>
-      </div>
+            <br>
+          <% end %>
+        </div>
+      </div>  
     </div>
     <div class="cocktail-show-bottom-side">
       <div class="cocktail-show-bottom-side-suggestion">
