@@ -56,7 +56,7 @@
               <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
               <% ing.each do |x| %>
                 <% if x.liquor == true %>
-                  <%= image_tag(x.photo, size: "80x100") %>
+                  <%= image_tag(x.photo, size: "160x200") %>
                 <% end %>
               <% end %>
             <br>
