@@ -185,16 +185,18 @@
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
 .cocktail-show-right-side.properties {
-    text-align: center;
     background-color: white;
     width: 400px;
-    height: 150px;
+}
+
+.cocktail-show-right-side.properties.p {
+    border: solid #EAEAEA;
 }
 
 .cocktail-show-right-side.alc-ing {
