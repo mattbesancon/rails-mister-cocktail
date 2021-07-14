@@ -191,19 +191,24 @@
 }
 
 .cocktail-show-right-side.properties {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
     background-color: white;
-    width: 400px;
 }
 
-.cocktail-show-right-side.properties.p {
-    border: solid #EAEAEA;
+.cocktail-show-right-side.properties.item {
+    border: solid #EAEAEA 1px;
+    padding: 5px;
+    height: 50px;
+    text-align: center;
 }
 
 .cocktail-show-right-side.alc-ing {
     text-align: center;
     background-color: white;
     width: 400px;
-    height: 350px;
+    height: 300px;
 }
 
 .cocktail-show-right-side.non-alc-ing {
