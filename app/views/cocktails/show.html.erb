@@ -52,15 +52,12 @@
           <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
           <div class="cocktail-show-right-side alc-ing image">
             <% @cocktail.doses.each do |cocktail| %>
-              <br>
-                <% ing = [] %>
-                <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-                <% ing.each do |x| %>
-                  <% if x.liquor == true %>
-                    <%= image_tag(x.photo, size: "160x200") %>
-                  <% end %>
-                <% end %>
-              <br>
+              <% alc_ing = [] %>
+              <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <% alc_ing.map { |x| x if x.liquor == true } %>
+              <%# if alc_ing.length > 1 %>
+                <%#= image_tag(alc_ing[0].photo, size: "160x200") %>
+              <%# end %>
             <% end %>
           </div>
         </div>
@@ -68,9 +65,9 @@
           <h3>Tous les ingredients non alc utilisés</h3>
           <% @cocktail.doses.each do |cocktail| %>
             <br>
-              <% ing = [] %>
-              <% ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% ing.each do |x| %>
+              <% non_alc_ing = [] %>
+              <% non_alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <% non_alc_ing.each do |x| %>
                 <% if x.liquor == false %>
                   <%= image_tag(x.photo, size: "80x100") %>
                 <% end %>
