@@ -54,10 +54,9 @@
             <% @cocktail.doses.each do |cocktail| %>
               <% alc_ing = [] %>
               <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% alc_ing.map { |x| x if x.liquor == true } %>
-              <%# if alc_ing.length > 1 %>
-                <%#= image_tag(alc_ing[0].photo, size: "160x200") %>
-              <%# end %>
+              <% alc_ing.map { |x| x if x.liquor == true} %>
+              <%= image_tag(alc_ing[0].photo, size: "160x200") %>
+              <%# Need to find a solution to use without the loop %>
             <% end %>
           </div>
         </div>
