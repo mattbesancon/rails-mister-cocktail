@@ -51,8 +51,11 @@
         <div class="cocktail-show-right-side alc-ing">
           <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
           <div class="cocktail-show-right-side alc-ing image">
-            <%# alc_ing = Ingredient.find_by_id(@cocktail.ingredient_id) %>
-            <%#= image_tag(alc_ing.photo, size: "160x200") %>
+            <% @cocktail.doses.each do |cocktail| %>
+              <% alc_ing = [] %>
+              <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+              <%= image_tag(alc_ing[0].photo, size: "160x200") %>
+            <% end %>
           </div>
         </div>
         <div class="cocktail-show-right-side non-alc-ing">
