@@ -51,13 +51,8 @@
         <div class="cocktail-show-right-side alc-ing">
           <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
           <div class="cocktail-show-right-side alc-ing image">
-            <% @cocktail.doses.each do |cocktail| %>
-              <% alc_ing = [] %>
-              <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% alc_ing.map { |x| x if x.liquor == true} %>
-              <%= image_tag(alc_ing[0].photo, size: "160x200") %>
-              <%# Need to find a solution to use without the loop %>
-            <% end %>
+            <%# alc_ing = Ingredient.find_by_id(@cocktail.ingredient_id) %>
+            <%#= image_tag(alc_ing.photo, size: "160x200") %>
           </div>
         </div>
         <div class="cocktail-show-right-side non-alc-ing">
