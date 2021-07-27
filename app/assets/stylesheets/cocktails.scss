@@ -158,18 +158,24 @@
 }
 
 .cocktail-show-left-side.doses {
-
+    display: flex;
+    flex-direction: column;
+    background-color: white;
 }
 
 .cocktail-show-left-side.doses.dropdown {
-
+    padding: 5px;
+    text-align: center;
+    background-color: #FFB6C1;
 }
 
 .cocktail-show-left-side.doses.description {
-
+    padding: 5px;
+    text-align: center;
+    background-color: #FFB6C1;
 }
 
-.cocktail-show-left-side.recipe {
+.cocktail-show-left-side.doses.recipe {
 
 }
 
