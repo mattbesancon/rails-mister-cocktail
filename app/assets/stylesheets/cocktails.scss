@@ -146,33 +146,40 @@
 }
 
 .cocktail-show-left-side.title.photo {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .cocktail-show-left-side.title {
-
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .cocktail-show-left-side.photo {
-
+    display: block;
+    width: fit-content;
 }
 
 .cocktail-show-left-side.doses {
     display: flex;
     flex-direction: column;
-    background-color: white;
+}
+
+.cocktail-show-left-side.doses.dropdown.description {
+    display: flex;
+    flex-direction: row;
 }
 
 .cocktail-show-left-side.doses.dropdown {
-    padding: 5px;
-    text-align: center;
-    background-color: #FFB6C1;
+    
 }
 
 .cocktail-show-left-side.doses.description {
-    padding: 5px;
-    text-align: center;
-    background-color: #FFB6C1;
+    
 }
 
 .cocktail-show-left-side.doses.recipe {
