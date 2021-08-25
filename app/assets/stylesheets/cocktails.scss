@@ -4,6 +4,7 @@
 
 .body {
     background-color: #EAEAEA;
+    min-height: 100%;
 }
 
 .container {
@@ -148,6 +149,8 @@
 .cocktail-show-left-side.title.photo {
     display: flex;
     flex-direction: column;
+    height: 300px;
+    width: 300px;
 }
 
 .cocktail-show-left-side.title {
@@ -160,8 +163,8 @@
 }
 
 .cocktail-show-left-side.photo {
-    display: block;
-    width: fit-content;
+    position: relative;
+    background-size: cover;
 }
 
 .cocktail-show-left-side.doses {
