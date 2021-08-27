@@ -7,46 +7,46 @@
         <div class="cocktail-show-top-side-item three"><p><%= @cocktail.name %></p></div>
       </div>
     </div>
+    
     <div class="cocktail-show-left-side">
-      <div class="row">
+      
         <div class="cocktail-show-left-side title photo">
           <div class="cocktail-show-left-side title"><h1><%= @cocktail.name %></div>
           <div class="cocktail-show-left-side photo"><%= image_tag(@cocktail.photo) %></div>
         </div>
         <div class="cocktail-show-left-side doses">
-          <div class="cocktail-show-left-side doses dropdown description">
-            <div class="cocktail-show-left-side doses dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-show-item 1" href="#">1</a></li>
-                <li><a class="dropdown-show-item 2" href="#">2</a></li>
-                <li><a class="dropdown-show-item 3" href="#">3</a></li>
-              </div>
-            </div>
-            <div class="cocktail-show-left-side doses description">
-              <% @cocktail.doses.each do |cocktail| %>
-                  <% if cocktail.description != nil %>
-                    <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
-                  <% end %>
-                  <% if cocktail.description != nil %>
-                    <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
-                  <% end %>
-                <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
-                <br>
-              <% end %>
+          <div class="cocktail-show-left-side doses dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-show-item 1" href="#">1</a></li>
+              <li><a class="dropdown-show-item 2" href="#">2</a></li>
+              <li><a class="dropdown-show-item 3" href="#">3</a></li>
             </div>
           </div>
-        </div>  
-        <div class="cocktail-show-left-side doses recipe">
-          <h2>Recipe</h2>
-          <%= @cocktail.description %>
+          <div class="cocktail-show-left-side doses description">
+            <% @cocktail.doses.each do |cocktail| %>
+                <% if cocktail.description != nil %>
+                  <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
+                <% end %>
+                <% if cocktail.description != nil %>
+                  <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
+                <% end %>
+              <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+              <br>
+            <% end %>
+          </div>
+          <div class="cocktail-show-left-side doses recipe">
+            <h2>Recipe</h2>
+            <%= @cocktail.description %>
+          </div>
         </div>
-      </div>
-    </div>
+
+    </div>  
+        
     <div class="cocktail-show-right-side">
-      <div class="row">
+      <div class="cocktail-show-right-side-row">
         <div class="cocktail-show-right-side properties">
           <div class="cocktail-show-right-side properties item"><p>Type: <%= @cocktail.category %></p></div>
           <div class="cocktail-show-right-side properties item"><p>Contenance: <%= @cocktail.capacity %></p></div>
@@ -78,6 +78,7 @@
         </div>
       </div>  
     </div>
+
     <div class="cocktail-show-bottom-side">
       <div class="cocktail-show-bottom-side-suggestion">
         <br>
@@ -98,6 +99,12 @@
             <%= image_tag(box_cocktail3.photo, size: "30x30") %>
             <p><%= box_cocktail3.name %></p>
             <p><%= box_cocktail3.description %></p>
+          </div>
+          <div class="cocktail-show-bottom-side-suggestion four">
+            <% box_cocktail4 = Cocktail.order('RANDOM()')[3] %>
+            <%= image_tag(box_cocktail4.photo, size: "30x30") %>
+            <p><%= box_cocktail4.name %></p>
+            <p><%= box_cocktail4.description %></p>
           </div>
         <br>
       </div>

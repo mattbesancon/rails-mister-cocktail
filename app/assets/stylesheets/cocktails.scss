@@ -149,8 +149,6 @@
 .cocktail-show-left-side.title.photo {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 300px;
 }
 
 .cocktail-show-left-side.title {
@@ -163,18 +161,17 @@
 }
 
 .cocktail-show-left-side.photo {
+    /*background-size: cover;*/
     position: relative;
-    background-size: cover;
+    width: 300px;
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .cocktail-show-left-side.doses {
     display: flex;
     flex-direction: column;
-}
-
-.cocktail-show-left-side.doses.dropdown.description {
-    display: flex;
-    flex-direction: row;
 }
 
 .cocktail-show-left-side.doses.dropdown {
@@ -195,7 +192,7 @@
     background-color: #EAEAEA;   
 }
 
-.row {
+.cocktail-show-right-side-row {
     width: auto;
     height: 100%;
     padding: 0;
