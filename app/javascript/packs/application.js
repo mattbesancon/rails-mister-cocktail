@@ -15,25 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-/*
-import 'bootstrap';
-
-document.getElementById("dropdown-show-item").addEventListener('click', () => {
-    const quantity = document.getElementById("quantity").value;
-    const multiplier = document.getElementById("dropdown-show-item").value;
-    const result = document.getElementById("result");
-    const total = quantity * multiplier;
-    result.value = total;
-}, false);
-
-document.getElementsByClassName('dropdown-menu li').addEventListener('click', () => {
-    const quantity = document.getElementById("quantity").value;
-    const multiplier = document.getElementsByClassName('dropdown-menu li').value;
-    document.getElementById('result').value(quantity*multiplier);
-});
-*/
-
-// Check the scripts with multiple functions to do that
 
 
 

@@ -169,10 +169,11 @@
 .cocktail-show-left-side.doses {
     display: flex;
     flex-direction: column;
+    padding: 0.5em;
 }
 
-.cocktail-show-left-side.doses.dropdown {
-    
+.dropdown {
+    /* voir différences avec le début quand le dropdown marchait */
 }
 
 .cocktail-show-left-side.doses.description {
