@@ -29,10 +29,7 @@
           <div class="cocktail-show-left-side doses description">
             <% @cocktail.doses.each do |cocktail| %>
                 <% if cocktail.description != nil %>
-                  <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
-                <% end %>
-                <% if cocktail.description != nil %>
-                  <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
+                  <%= cocktail.description %>
                 <% end %>
               <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
               <br>
@@ -124,3 +121,19 @@
     </div>
   </div>  
 </div>
+
+
+<%
+=begin%>
+<% @cocktail.doses.each do |cocktail| %>
+    <% if cocktail.description != nil %>
+      <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
+    <% end %>
+    <% if cocktail.description != nil %>
+      <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
+    <% end %>
+  <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+  <br>
+<%
+=end
+%>

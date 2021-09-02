@@ -17,6 +17,7 @@ require 'rest-client'
         cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
         (1..15).each do |j|
             el = x["strIngredient#{j}"]
+            y = x["strMeasure#{j}"]
             if el.nil? == false && Ingredient.find_by_name(el).nil?
                 arr = el.split(" ")
                 str = arr.join("%20")
@@ -27,7 +28,7 @@ require 'rest-client'
                     new_ing.liquor = true
                     new_ing.save
                 end 
-                new_dose = Dose.create(description: el, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
+                new_dose = Dose.create(description: y, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
             end
         end
     end
