@@ -14,28 +14,30 @@
         <div class="cocktail-show-left-side photo"><%= image_tag(@cocktail.photo, style: "max-width: 573px; max-height: 573px") %></div>
       </div>
       <div class="cocktail-show-left-side doses">
-        <div class ="dropdown-button">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">1</a>
-                <a class="dropdown-item" href="#">2</a>
-                <a class="dropdown-item" href="#">3</a>
-              </div>
-          </button>
-        </div>
-        
-        <div class="cocktail-show-left-side doses description">
-          <% @cocktail.doses.each do |cocktail| %>
-              <% if cocktail.description != nil %>
-                <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
-              <% end %>
-              <% if cocktail.description != nil %>
-                <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
-              <% end %>
-            <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
-            <br>
-          <% end %>
+        <div class="cocktail-show-left-side doses colored-area">
+          <div class="cocktail-show-left-side doses title">INGREDIENTS</div>
+          <div class ="cocktail-show-left-side doses dropdown-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">1</a>
+                  <a class="dropdown-item" href="#">2</a>
+                  <a class="dropdown-item" href="#">3</a>
+                </div>
+            </button>
+          </div>
+          <div class="cocktail-show-left-side doses description">
+            <% @cocktail.doses.each do |cocktail| %>
+                <% if cocktail.description != nil %>
+                  <span id="quantity"><%= cocktail.description.delete("^0-9").to_i %></span>
+                <% end %>
+                <% if cocktail.description != nil %>
+                  <span id="measure"><%= cocktail.description.tr("0-9", "") %></span>
+                <% end %>
+              <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+              <br>
+            <% end %>
+          </div>
         </div>
         <div class="cocktail-show-left-side doses recipe">
           <h2>Recipe</h2>
