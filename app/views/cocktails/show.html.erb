@@ -14,16 +14,17 @@
         <div class="cocktail-show-left-side photo"><%= image_tag(@cocktail.photo, style: "max-width: 573px; max-height: 573px") %></div>
       </div>
       <div class="cocktail-show-left-side doses">
-        <div class="dropdown">
+        <div class ="dropdown-button">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown button
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">1</a>
+                <a class="dropdown-item" href="#">2</a>
+                <a class="dropdown-item" href="#">3</a>
+              </div>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a>
-          </div>
         </div>
+        
         <div class="cocktail-show-left-side doses description">
           <% @cocktail.doses.each do |cocktail| %>
               <% if cocktail.description != nil %>
