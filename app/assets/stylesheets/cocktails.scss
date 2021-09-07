@@ -173,11 +173,13 @@
 }
 
 .cocktail-show-left-side.doses.colored-area {
-    
+    background-color: #f4efef;
+    padding: 0.5em;
+    margin: 0.75em;
 }
 
 .cocktail-show-left-side.doses.title {
-
+    background-color: #f4efef;
 }
 
 /*
@@ -187,7 +189,13 @@
 */
 
 .cocktail-show-left-side.doses.description {
-    
+    background-color: #f4efef;
+    margin-left: auto;
+}
+
+.cocktail-show-left-side.doses.description.item {
+    border-bottom: 1px solid lightgrey;
+    width: 300px;
 }
 
 .cocktail-show-left-side.doses.recipe {
