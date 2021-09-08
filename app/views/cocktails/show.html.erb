@@ -29,19 +29,21 @@
           </div>
           -->
           <div class="cocktail-show-left-side doses description">
-              <% @cocktail.doses.each do |cocktail| %>
-                <div class="cocktail-show-left-side doses description item">
-                    <% if cocktail.description != nil %>
-                      <%= cocktail.description %>
-                    <% end %>
-                  <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
-                  <br>
-                </div>
-              <% end %>
+            <% @cocktail.doses.each do |cocktail| %>
+              <div class="cocktail-show-left-side doses description item">
+                  <% if cocktail.description != nil %>
+                    <%= cocktail.description %>
+                  <% end %>
+                <%= Ingredient.find_by_id(cocktail.ingredient_id).name %>
+                <br>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="cocktail-show-left-side doses recipe">
-          <h2>Recipe</h2>
+          <div class="cocktail-show-left-side doses recipe title">
+            <h2><i class="fas fa-cocktail"></i>  Recipe  </h2>
+          </div>
           <%= @cocktail.description %>
         </div>
       </div>

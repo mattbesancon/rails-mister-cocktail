@@ -199,7 +199,12 @@
 }
 
 .cocktail-show-left-side.doses.recipe {
+    margin: 0.15em;
+    background-color: white;
+}
 
+.cocktail-show-left-side.doses.recipe.title {
+    font-size: large;
 }
 
 .cocktail-show-right-side {
