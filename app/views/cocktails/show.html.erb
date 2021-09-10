@@ -2,9 +2,9 @@
   <div class="container">
     <div class="cocktail-show-top-side">
       <div class="cocktail-show-top-side-item">
-        <div class="cocktail-show-top-side-item one"><p>Accueil</p></div>
-        <div class="cocktail-show-top-side-item two"><p>Cocktails</p></div>
-        <div class="cocktail-show-top-side-item three"><p><%= @cocktail.name %></p></div>
+        <div class="cocktail-show-top-side-item one">Accueil</p></div>
+        <div class="cocktail-show-top-side-item two">Cocktails</p></div>
+        <div class="cocktail-show-top-side-item three"><%= @cocktail.name %></p></div>
       </div>
     </div>
 
@@ -50,36 +50,34 @@
     </div>  
         
     <div class="cocktail-show-right-side">
-      <div class="cocktail-show-right-side-row">
-        <div class="cocktail-show-right-side properties">
-          <div class="cocktail-show-right-side properties item"><p>Type: <%= @cocktail.category %></p></div>
-          <div class="cocktail-show-right-side properties item"><p>Contenance: <%= @cocktail.capacity %></p></div>
-          <div class="cocktail-show-right-side properties item"><p>Difficulté: <%= @cocktail.complexity %></p></div>
-        </div>
-        <div class="cocktail-show-right-side alc-ing">
-          <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
-          <div class="cocktail-show-right-side alc-ing image">
-            <% @cocktail.doses.each do |cocktail| %>
-              <% alc_ing = [] %>
-              <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <%= image_tag(alc_ing[0].photo, size: "160x200") %>
-            <% end %>
-          </div>
-        </div>
-        <div class="cocktail-show-right-side non-alc-ing">
-          <h3>Tous les ingredients non alc utilisés</h3>
+      <div class="cocktail-show-right-side properties">
+        <div class="cocktail-show-right-side properties item"><h6>Category:</h6> <p><b><%= @cocktail.category %></b></p></div>
+        <div class="cocktail-show-right-side properties item"><h6>Capacity:</h6> <p><b><%= @cocktail.capacity %></p></b></div>
+        <div class="cocktail-show-right-side properties item"><h6>Complexity:</h6> <p><b><%= @cocktail.complexity %></p></b></div>
+      </div>
+      <div class="cocktail-show-right-side alc-ing">
+        <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
+        <div class="cocktail-show-right-side alc-ing image">
           <% @cocktail.doses.each do |cocktail| %>
-            <br>
-              <% non_alc_ing = [] %>
-              <% non_alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-              <% non_alc_ing.each do |x| %>
-                <% if x.liquor == false %>
-                  <%= image_tag(x.photo, size: "80x100") %>
-                <% end %>
-              <% end %>
-            <br>
+            <% alc_ing = [] %>
+            <% alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+            <%= image_tag(alc_ing[0].photo, size: "160x200") %>
           <% end %>
         </div>
+      </div>
+      <div class="cocktail-show-right-side non-alc-ing">
+        <h3>Tous les ingredients non alc utilisés</h3>
+        <% @cocktail.doses.each do |cocktail| %>
+          <br>
+            <% non_alc_ing = [] %>
+            <% non_alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
+            <% non_alc_ing.each do |x| %>
+              <% if x.liquor == false %>
+                <%= image_tag(x.photo, size: "80x100") %>
+              <% end %>
+            <% end %>
+          <br>
+        <% end %>
       </div>  
     </div>
 
@@ -89,26 +87,26 @@
           <div class="cocktail-show-bottom-side-suggestion one">
             <% box_cocktail1 = Cocktail.order('RANDOM()')[0] %>
             <%= image_tag(box_cocktail1.photo, size: "30x30") %>
-            <p><%= box_cocktail1.name %></p>
-            <p><%= box_cocktail1.description %></p>
+            <%= box_cocktail1.name %></p>
+            <%= box_cocktail1.description %></p>
           </div>
           <div class="cocktail-show-bottom-side-suggestion two">
             <% box_cocktail2 = Cocktail.order('RANDOM()')[1] %>
             <%= image_tag(box_cocktail2.photo, size: "30x30") %>
-            <p><%= box_cocktail2.name %></p>
-            <p><%= box_cocktail2.description %></p>
+            <%= box_cocktail2.name %></p>
+            <%= box_cocktail2.description %></p>
           </div>
           <div class="cocktail-show-bottom-side-suggestion three">
             <% box_cocktail3 = Cocktail.order('RANDOM()')[2] %>
             <%= image_tag(box_cocktail3.photo, size: "30x30") %>
-            <p><%= box_cocktail3.name %></p>
-            <p><%= box_cocktail3.description %></p>
+            <%= box_cocktail3.name %></p>
+            <%= box_cocktail3.description %></p>
           </div>
           <div class="cocktail-show-bottom-side-suggestion four">
             <% box_cocktail4 = Cocktail.order('RANDOM()')[3] %>
             <%= image_tag(box_cocktail4.photo, size: "30x30") %>
-            <p><%= box_cocktail4.name %></p>
-            <p><%= box_cocktail4.description %></p>
+            <%= box_cocktail4.name %></p>
+            <%= box_cocktail4.description %></p>
           </div>
         <br>
       </div>
