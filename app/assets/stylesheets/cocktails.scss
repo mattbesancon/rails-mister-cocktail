@@ -248,10 +248,9 @@
 }
 
 .cocktail-show-right-side.non-alc-ing {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    width: 400px;
-    height: 520px;
 }
 
 .cocktail-show-bottom-side {
