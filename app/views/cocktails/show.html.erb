@@ -1,5 +1,6 @@
 <div class="body">
   <div class="container">
+
     <div class="cocktail-show-top-side">
       <div class="cocktail-show-top-side-item">
         <div class="cocktail-show-top-side-item one"><p>Accueil</p></div>
@@ -82,27 +83,30 @@
     </div>
 
     <div class="cocktail-show-bottom-side">
-      <div class="cocktail-show-bottom-side-suggestion">
+      <div class="cocktail-show-bottom-side title">
+      -------------------------------------------- VOUS POURRIEZ AIMER AUSSI --------------------------------------------
+      </div>
+      <div class="cocktail-show-bottom-side-card">
         <br>
-          <div class="cocktail-show-bottom-side-suggestion one">
+          <div class="cocktail-show-bottom-side-card one">
             <% box_cocktail1 = Cocktail.order('RANDOM()')[0] %>
             <%= image_tag(box_cocktail1.photo, size: "30x30") %>
             <%= box_cocktail1.name %></p>
             <%= box_cocktail1.description %></p>
           </div>
-          <div class="cocktail-show-bottom-side-suggestion two">
+          <div class="cocktail-show-bottom-side-card two">
             <% box_cocktail2 = Cocktail.order('RANDOM()')[1] %>
             <%= image_tag(box_cocktail2.photo, size: "30x30") %>
             <%= box_cocktail2.name %></p>
             <%= box_cocktail2.description %></p>
           </div>
-          <div class="cocktail-show-bottom-side-suggestion three">
+          <div class="cocktail-show-bottom-side-card three">
             <% box_cocktail3 = Cocktail.order('RANDOM()')[2] %>
             <%= image_tag(box_cocktail3.photo, size: "30x30") %>
             <%= box_cocktail3.name %></p>
             <%= box_cocktail3.description %></p>
           </div>
-          <div class="cocktail-show-bottom-side-suggestion four">
+          <div class="cocktail-show-bottom-side-card four">
             <% box_cocktail4 = Cocktail.order('RANDOM()')[3] %>
             <%= image_tag(box_cocktail4.photo, size: "30x30") %>
             <%= box_cocktail4.name %></p>
