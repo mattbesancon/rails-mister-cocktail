@@ -27,11 +27,13 @@ require 'rest-client'
                 if resp["ingredients"][0]["strAlcohol"] == "Yes"
                     new_ing.liquor = true
                     new_ing.save
-                end 
+                end
+                #if new_ing.liquor = true
+                #    el = Cocktail.update(photo_alc: new_ing.photo)
+                #end
                 new_dose = Dose.create(description: y, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
             end
         end
     end
 end
-
 
