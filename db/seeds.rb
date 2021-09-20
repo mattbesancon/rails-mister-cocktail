@@ -28,9 +28,9 @@ require 'rest-client'
                     new_ing.liquor = true
                     new_ing.save
                 end
-                #if new_ing.liquor = true
-                #    el = Cocktail.update(photo_alc: new_ing.photo)
-                #end
+                if new_ing.liquor = true
+                    cocktail.update(photo_alc: new_ing.photo)
+                end
                 new_dose = Dose.create(description: y, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
             end
         end
