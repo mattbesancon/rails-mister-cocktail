@@ -56,7 +56,11 @@
       <div class="cocktail-show-right-side alc-ing">
         <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
         <div class="cocktail-show-right-side alc-ing image">
-          <%= image_tag(@cocktail.photo_alc, size: "160x200") %>
+          <% if @cocktail.photo_alc.nil?  %>
+            <%= "--" %>
+          <% else %>
+            <%= image_tag(@cocktail.photo_alc, size: "160x200") %>
+          <% end %>
         </div>
       </div>
       <div class="cocktail-show-right-side non-alc-ing">
