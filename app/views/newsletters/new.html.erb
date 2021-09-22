@@ -1,10 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/cocktail-background.jpeg);">
-  <div class="container">
-    <h1>Subscribe to the newsletter to receive infos about your fav cocktails!</h1>
+<div class="newsletter-body">
+  <div class="newsletter-container">
+    <h1>Inscription to the Newsletter!</h1>
+    <p>Every 3 months we are going to send you our selection of the best cocktails available</p>
+    <%= form_for @newsletter do |f| %>
+      <%= f.text_field :email, :style => "width:50%;", :placeholder => "Your email address", :class => "form-control input-sm" %>
+      <%= f.submit "Keep me updated", :class => "btn btn-primary btn-sm" %>
+    <% end %>
   </div>
 </div>
-
-<%= form_for @newsletter do |f| %>
-  <%= f.text_field :email, :style => "width:50%;", :placeholder => "Your email address", :class => "form-control input-sm" %>
-  <%= f.submit "Keep me updated", :class => "btn btn-primary btn-sm" %>
-<% end %>
