@@ -6,7 +6,10 @@
       <%= form_for @newsletter do |f| %>
         <%= f.text_field :email, :placeholder => "Your email address", :class => "form-control input-sm" %>
         <br>
-        <%= f.submit "Inscription", :class => "btn btn-primary btn-sm" %>
+        <div class="flex-inscription-home">
+          <%= f.submit "Inscription", :class => "btn btn-primary btn-sm" %>
+          <%= link_to "Back to Homepage", cocktails_path %>
+        </div>
       <% end %>
     </div>
   </div>

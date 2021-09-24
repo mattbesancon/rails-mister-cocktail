@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .newsletter-body {
-    background-color: #F6B600;
+    background-color: #FFA500;
     margin-top: -200px;
     min-height: 100%;
+    opacity: 0.7;
 }
 
 .newsletter-container {
@@ -20,9 +21,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 500px;
     margin-top: 400px;
     margin-bottom: 300px;
     padding: 20px;
     background-color: white;
+}
+
+.flex-inscription-home {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
 }
