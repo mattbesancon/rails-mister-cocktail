@@ -37,3 +37,34 @@ require 'rest-client'
     end
 end
 
+(10..15).each do |i|
+    result = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=110#{i}")
+    response = JSON.parse(result)
+    if response["drinks"].nil?
+        return
+    else
+        response["drinks"].each do |x|
+            cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+            (1..15).each do |j|
+                el = x["strIngredient#{j}"]
+                y = x["strMeasure#{j}"]
+                if el.nil? == false && Ingredient.find_by_name(el).nil?
+                    arr = el.split(" ")
+                    str = arr.join("%20")
+                    new_ing = Ingredient.create(name: el, photo: "https://www.thecocktaildb.com/images/ingredients/#{str}.png")
+                    res = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{el}")
+                    resp = JSON.parse(res)
+                    if resp["ingredients"][0]["strAlcohol"] == "Yes"
+                        new_ing.liquor = true
+                        new_ing.save
+                    end
+                    if new_ing.liquor == true
+                        cocktail.update(photo_alc: new_ing.photo)
+                    end
+                    new_dose = Dose.create(description: y, cocktail_id: cocktail.id, ingredient_id: new_ing.id)               
+                end
+            end
+        end
+    end
+end
+
