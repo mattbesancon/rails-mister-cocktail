@@ -89,7 +89,7 @@
             <%= image_tag(card_cocktail0.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= card_cocktail0.name %></h6>
+            <h6><%= link_to "#{card_cocktail0.name}", cocktail_path(card_cocktail0) %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -98,7 +98,7 @@
             <%= image_tag(card_cocktail1.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= card_cocktail1.name %></h6>
+            <h6><%= link_to "#{card_cocktail1.name}", cocktail_path(card_cocktail1) %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -107,7 +107,7 @@
             <%= image_tag(card_cocktail2.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= card_cocktail2.name %></h6>
+            <h6><%= link_to "#{card_cocktail2.name}", cocktail_path(card_cocktail2) %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -116,7 +116,7 @@
             <%= image_tag(card_cocktail3.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= card_cocktail3.name %></h6>
+            <h6><%= link_to "#{card_cocktail3.name}", cocktail_path(card_cocktail3) %></h6>
           </div>
         </div>
       </div>
