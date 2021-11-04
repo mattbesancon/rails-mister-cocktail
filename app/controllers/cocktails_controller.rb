@@ -1,4 +1,5 @@
 class CocktailsController < ApplicationController
+  # Full check of controllers
   def index
     if params[:query].present?
       sql_query = " \
