@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 2021_09_17_092157) do
     t.string "photo_alc"
   end
 
-  create_table "decimals", id: :integer, default: nil, force: :cascade do |t|
-    t.integer "number1", null: false
-    t.integer "number2", null: false
-  end
-
   create_table "doses", force: :cascade do |t|
     t.string "description"
     t.bigint "cocktail_id"
