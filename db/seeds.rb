@@ -14,7 +14,7 @@ require 'rest-client'
     result = RestClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=1100#{i}")
     response = JSON.parse(result)
     response["drinks"].each do |x|
-        cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+        cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"], video: x["strVideo"])
         (1..15).each do |j|
             el = x["strIngredient#{j}"]
             y = x["strMeasure#{j}"]
@@ -44,7 +44,7 @@ end
         return
     else
         response["drinks"].each do |x|
-            cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"])
+            cocktail = Cocktail.create(name: x["strDrink"], photo: x["strDrinkThumb"], description: x["strInstructions"], category: x["strCategory"], video: x["strVideo"])
             (1..15).each do |j|
                 el = x["strIngredient#{j}"]
                 y = x["strMeasure#{j}"]
