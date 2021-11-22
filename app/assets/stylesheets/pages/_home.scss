@@ -31,11 +31,18 @@ html, body {
 }
 
 .home-all-cocktails-link {
-
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);
+    width: 910px;  
+    height: 300px;
+    position: relative;
 }
 
-.home-all-cocktails-link-banner {
-
+.home-all-cocktails-link-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
 }
 
 .home-newsletter {
