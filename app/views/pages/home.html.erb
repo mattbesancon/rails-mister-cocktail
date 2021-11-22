@@ -17,6 +17,9 @@
         <% @cocktail3 = Cocktail.all.sample %>
         <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true %>
     </div>
+    <div class="carrousel-alc">
+    
+    </div>
     <div class="home-all-cocktails-link">
         <div class="home-all-cocktails-link-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);">
             <%= link_to "All the cocktails that you want & need!", cocktails_path %>

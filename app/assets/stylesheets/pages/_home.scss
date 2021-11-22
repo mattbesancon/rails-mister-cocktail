@@ -1,18 +1,8 @@
 // Specific CSS for your home-page
 
-/*
-.footer-bs {
-	background-color: #3c3d41;
-	padding: 20px 40px;
-	color: rgba(255,255,255,1.00);
-	margin-bottom: 20px;
-	border-bottom-right-radius: 6px;
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 6px;
-	bottom:0;
-	width: 100%;
+html, body {
+	overflow-x: hidden;
 }
-*/
 
 .home-container {
     display: block;
@@ -30,7 +20,14 @@
 }
 
 .home-videos {
-    margin-bottom: 20px;
+	margin: 0 -9999rem;
+	padding: 0.25rem 9999rem;
+	background: lightgrey;
+	margin-bottom: 20px;
+}
+
+.carrousel-alc {
+
 }
 
 .home-all-cocktails-link {
