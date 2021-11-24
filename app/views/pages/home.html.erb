@@ -27,10 +27,12 @@
     </div>
     <div class="home-newsletter">
         <div class="home-newsletter-signup">
-            <%= link_to "All the cocktails that you want & need!", cocktails_path %>
+            <div class="newsletter-box-signup">
+                <%= render "newsletter/new", newsletter: @newsletter %>
+            </div>
         </div>
         <div class="home-newsletter-photo">
-            <%= link_to "All the cocktails that you want & need!", cocktails_path %>
+            
         </div>
     </div>
 </div>

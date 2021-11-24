@@ -27,13 +27,14 @@ html, body {
 }
 
 .carrousel-alc {
-
+    /* TO DO */
 }
 
 .home-all-cocktails-link {
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);
     width: 910px;  
     height: 300px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -46,13 +47,53 @@ html, body {
 }
 
 .home-newsletter {
-
+    margin: 0 -9999rem;
+	padding: 0.25rem 9999rem;
+	background: #72A0C1;
+	margin-bottom: 20px;
 }
 
 .home-newsletter-signup {
+        
+}
+
+.newsletter-box-signup {
+
+}
+
+.flex-inscription-home-signup {
 
 }
 
 .home-newsletter-photo {
 
 }
+
+
+
+/*
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.newsletter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin-top: 400px;
+    margin-bottom: 300px;
+    padding: 20px;
+    background-color: white;
+}
+
+.flex-inscription-home {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+}
+/*
