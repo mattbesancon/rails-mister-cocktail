@@ -11,11 +11,11 @@
     </div>
     <div class="home-videos">
         <% @cocktail1 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail1.video), size: "300x200", controls: true %>
+        <%= video_tag url_for(@cocktail1.video), size: "300x200", controls: true, autobuffer: true %>
         <% @cocktail2 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail2.video), size: "300x200", controls: true %>
+        <%= video_tag url_for(@cocktail2.video), size: "300x200", controls: true, autobuffer: true %>
         <% @cocktail3 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true %>
+        <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true, autobuffer: true %>
     </div>
     <div class="carrousel-alc">
     
@@ -28,7 +28,7 @@
     <div class="home-newsletter">
         <div class="home-newsletter-signup">
             <div class="newsletter-box-signup">
-                <%= render "newsletter/new", newsletter: @newsletter %>
+                <%#= render "newsletters/new", newsletter: @newsletter %>
             </div>
         </div>
         <div class="home-newsletter-photo">
