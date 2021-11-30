@@ -25,14 +25,14 @@
             <%= link_to "All the cocktails that you want & need!", cocktails_path %>
         </div>
     </div>
-    <div class="home-newsletter">
-        <div class="home-newsletter-signup">
-            <div class="newsletter-box-signup">
+    <div class="home-newsletter">  
+        <div class="home-newsletter-container">
+            <div class="home-newsletter-box">
                 <%= render "shared/form", newsletter: @newsletter %>
             </div>
-        </div>
-        <div class="home-newsletter-photo">
-            
+            <div class="home-newsletter-photo">
+                <img src="/assets/cocktail_signup.png" width="570" height="400" />
+            </div>
         </div>
     </div>
 </div>
