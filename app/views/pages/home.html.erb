@@ -21,19 +21,19 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <% Ingredient.all.select { |m| m.liquor == true }.each do |el| %>
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <% Ingredient.all.select { |m| m.liquor == true }.each_with_index do |el, idx| %>
+                    <li data-target="#myCarousel" data-slide-to="<%= idx %>" class="<%= idx == 0 ? 'active' : '' %>"></li>
                 <% end %>
             </ol>
 
             <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <% Ingredient.all.select { |m| m.liquor == true }.each do |el| %>
-                            <%= image_tag el.photo %>
-                        <% end %>
+            <div class="carousel-inner" role="listbox">
+                <% Ingredient.all.select { |m| m.liquor == true }.each_with_index do |el, idx| %>
+                    <div class="item <%= idx == 0 ? 'active' : '' %>">
+                        <%= image_tag el.photo %>
                     </div>
-                </div>
+                <% end %>
+            </div>
 
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
