@@ -70,4 +70,4 @@ gem 'fog-aws'
 gem 'devise'
 gem 'sassc'
 gem 'pg_search'
-gem 'bootstrap', '~> 4.0'
+
