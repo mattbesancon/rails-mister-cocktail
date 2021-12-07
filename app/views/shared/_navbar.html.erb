@@ -1,25 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag("logo-header.png", size: "115x50") %>
-  <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "All cocktails", cocktails_path, class: "nav-link" %>
-      </li>
-    </ul>
-    <div class="navbar-newsletter"><%= link_to "Newsletter", new_newsletter_path, class: "btn btn-warning" %></div>
-    <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control mr-sm-2",
-        placeholder: "Search a cocktail"
-      %>
-      <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
-    <% end %>
+  <div class="container-fluid">
+    <div class="navbar-brand"><%= link_to "Atelier Cocktail", root_path %></div>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "All cocktails", cocktails_path, class: "nav-link" %>
+        </li>
+        <div class="navbar-newsletter"><%= link_to "Newsletter", new_newsletter_path, class: "btn btn-warning" %></div>
+      </ul>
+      <form class="d-flex">
+        <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mr-sm-2",
+          placeholder: "Search a cocktail"
+        %>
+        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+      </form>
+    </div>
   </div>
 </nav>
