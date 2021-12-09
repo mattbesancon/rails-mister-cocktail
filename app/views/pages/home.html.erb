@@ -18,24 +18,7 @@
         <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true, autobuffer: true %>
     </div>
     <div class="carousel-alc">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" data-bs-interval="10000">
-                <% Ingredient.all.select { |m| m.liquor == true }.each_with_index do |el, idx| %>
-                    <%#= Missing link between bootstrap & increment in ruby  %>
-                    <div class="carousel-item <%= idx == 0 ? 'active' : '' %>">
-                        <%= image_tag el.photo, class: "d-block w-100" %>
-                    </div>
-                <% end %>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="false"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <%= carousel_for(Ingredient.new.image_urls) %>
     </div>
     <div class="home-all-cocktails-link">
         <div class="home-all-cocktails-link-text">
