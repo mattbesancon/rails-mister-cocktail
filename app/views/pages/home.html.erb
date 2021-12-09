@@ -21,19 +21,18 @@
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" data-bs-interval="10000">
                 <% Ingredient.all.select { |m| m.liquor == true }.each_with_index do |el, idx| %>
-                    <% for i in 0..12 do %>
-                        <div class="carousel-item <%= idx == i ? 'active' : '' %>">
-                            <%= image_tag el.photo, class: "d-block w-100" %>
-                        </div>
-                    <% end %>
+                    <%#= Missing link between bootstrap & increment in ruby  %>
+                    <div class="carousel-item <%= idx == 0 ? 'active' : '' %>">
+                        <%= image_tag el.photo, class: "d-block w-100" %>
+                    </div>
                 <% end %>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon" aria-hidden="false"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
