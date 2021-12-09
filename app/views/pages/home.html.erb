@@ -17,7 +17,7 @@
         <% @cocktail3 = Cocktail.all.sample %>
         <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true, autobuffer: true %>
     </div>
-    <div class="carrousel-alc">
+    <div class="carousel-alc">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" data-bs-interval="10000">
                 <% Ingredient.all.select { |m| m.liquor == true }.each_with_index do |el, idx| %>
