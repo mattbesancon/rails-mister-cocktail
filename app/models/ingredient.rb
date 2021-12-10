@@ -6,6 +6,6 @@ class Ingredient < ApplicationRecord
   has_many :doses
 
   def image_urls
-    Ingredient.all.select { |m| m.liquor == true }
+    Ingredient.all.select { |m| m.liquor == true }.map { |m| m.photo }
   end
 end
