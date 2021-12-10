@@ -39,27 +39,29 @@ module CarouselHelper
       def slides
         items = images.map.with_index { |image, index| slide_tag(image, index.zero?) }
         content_tag(:div, safe_join(items), class: 'carousel-inner')
+        
       end
   
       def slide_tag(image, is_active)
         options = {
-          class: (is_active ? 'item active' : 'item'),
+          class: (is_active ? 'carousel-item active' : 'carousel-item'),
         }
-  
-        content_tag(:div, image_tag(image), options)
+        
+        content_tag(:div, image_tag(image, class: "d-block w-100"), options)
       end
   
       def controls
-        safe_join([control_tag('left'), control_tag('right')])
+        safe_join([control_tag('prev'), control_tag('next')])
       end
   
       def control_tag(direction)
         options = {
-          class: "#{direction} carousel-control",
-          data: { slide: direction == 'left' ? 'prev' : 'next' }
+          class: "carousel-control-#{direction}",
+          role: "button", 
+          data: { slide: direction == 'prev' ? 'prev' : 'next' }
         }
   
-        icon = content_tag(:i, '', class: "glyphicon glyphicon-chevron-#{direction}")
+        icon = content_tag(:span, '', class: "carousel-control-#{direction}-icon")
         control = link_to(icon, "##{uid}", options)
       end
     end
