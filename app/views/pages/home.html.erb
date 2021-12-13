@@ -10,12 +10,9 @@
         </p>
     </div>
     <div class="home-videos">
-        <% @cocktail1 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail1.video), size: "300x200", controls: true, autobuffer: true %>
-        <% @cocktail2 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail2.video), size: "300x200", controls: true, autobuffer: true %>
-        <% @cocktail3 = Cocktail.all.sample %>
-        <%= video_tag url_for(@cocktail3.video), size: "300x200", controls: true, autobuffer: true %>
+        <%= video_tag url_for(Cocktail.all.sample.video), size: "300x200", controls: true, autobuffer: true %>
+        <%= video_tag url_for(Cocktail.all.sample.video), size: "300x200", controls: true, autobuffer: true %>
+        <%= video_tag url_for(Cocktail.all.sample.video), size: "300x200", controls: true, autobuffer: true %>
     </div>
     <div class="carousel-alc">
         <%= carousel_for(Ingredient.new.image_urls) %>
