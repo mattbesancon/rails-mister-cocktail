@@ -57,8 +57,9 @@ module CarouselHelper
       def control_tag(direction)
         options = {
           class: "carousel-control-#{direction}",
-          role: "button", 
-          data: { slide: direction == 'prev' ? 'prev' : 'next' }
+          data: {
+            slide: direction == 'prev' ? 'prev' : 'next'
+          }
         }
   
         icon = content_tag(:span, '', class: "carousel-control-#{direction}-icon")
