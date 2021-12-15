@@ -12,7 +12,7 @@
     <div class="home-videos">
         <%= video_tag url_for(Cocktail.last.video), size: "900x300", controls: true %>
     </div>
-    <div class="carousel-alc">
+    <div class="myCarousel">
         <%= carousel_for(Ingredient.new.image_urls) %>
     </div>
     <div class="home-all-cocktails-link">
