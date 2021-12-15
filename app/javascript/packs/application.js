@@ -18,3 +18,10 @@
 
 
 
+window.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("navbar-form");
+
+    document.getElementById("submit-form").addEventListener("click", function () {
+      form.submit();
+    });
+});

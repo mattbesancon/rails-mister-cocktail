@@ -13,13 +13,13 @@
         <div class="navbar-newsletter"><%= link_to "Newsletter", new_newsletter_path, class: "btn btn-warning" %></div>
       </ul>
       <form class="d-flex">
-        <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
+        <%= form_tag cocktails_path, id: "navbar-form", class: "form-inline my-2 my-lg-0", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control mr-sm-2",
           placeholder: "Search a cocktail"
         %>
-        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <%= link_to "Search", cocktails_path, id: "submit-form", class: "btn btn-outline-success my-2 my-sm-0") %>
         <% end %>
       </form>
     </div>

@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   # Full check of controllers
   def index
+    redirect_to cocktails_path
     if params[:query].present?
       sql_query = " \
         cocktails.name ILIKE :query \
