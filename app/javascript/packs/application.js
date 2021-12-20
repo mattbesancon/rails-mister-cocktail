@@ -16,12 +16,10 @@
 // const imagePath = (name) => images(name, true)
 
 
-
-
 window.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("navbar-form");
-
-    document.getElementById("submit-form").addEventListener("click", function () {
-      form.submit();
-    });
+  const form = document.getElementById("submit-form");
+  form.addEventListener("keyup", function () {
+    console.log('e');
+    window.location = "https://google.com";
+  });
 });
