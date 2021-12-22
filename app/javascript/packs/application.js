@@ -16,10 +16,7 @@
 // const imagePath = (name) => images(name, true)
 
 
-window.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("submit-form");
-  form.addEventListener("keyup", function () {
-    console.log('e');
-    window.location = "https://google.com";
-  });
+
+document.getElementById("submit-form").addEventListener("click", function () {
+  window.location.href = "https://google.com";
 });
