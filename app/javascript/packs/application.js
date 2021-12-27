@@ -16,7 +16,10 @@
 // const imagePath = (name) => images(name, true)
 
 
+window.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("navbar-form");
 
-document.getElementById("submit-form").addEventListener("click", function () {
-  window.location.href = "https://google.com";
+  document.getElementById("submit-form").addEventListener("click", function () {
+    form.submit();
+  });
 });
