@@ -2,9 +2,9 @@
   <div class="container">
     <div class="cocktail-show-top-side">
       <div class="cocktail-show-top-side-item">
-        <div class="cocktail-show-top-side-item one"><p><%= link_to "Home", cocktails_path %></p></div>
-        <div class="cocktail-show-top-side-item two"><p><%= link_to "Cocktails", cocktails_path %></p></div>
-        <div class="cocktail-show-top-side-item three"><p><%= link_to "#{@cocktail.name}", cocktail_path(@cocktail) %></p></div>
+        <div class="cocktail-show-top-side-item one"><p><%= link_to "Home", cocktails_path, class: "cocktail-show-top-side-link" %></p></div>
+        <div class="cocktail-show-top-side-item two"><p><%= link_to "Cocktails", cocktails_path, class: "cocktail-show-top-side-link" %></p></div>
+        <div class="cocktail-show-top-side-item three"><p><%= link_to "#{@cocktail.name}", cocktail_path(@cocktail), class: "cocktail-show-top-side-link" %></p></div>
       </div>
     </div>
     <div class="cocktail-show-left-side">
