@@ -123,12 +123,12 @@
       <div class="cocktail-show-bottom-side previous next">
         <div class="cocktail-show-bottom-side previous"> 
           <% if @cocktail.previous %>
-            <%= link_to "< Previous", @cocktail.previous %>
+            <%= link_to "< ", @cocktail.previous %>
           <% end %>
         </div>
         <div class="cocktail-show-bottom-side next">
           <% if @cocktail.next %>
-            <%= link_to "Next >", @cocktail.next %>
+            <%= link_to " >", @cocktail.next %>
           <% end %>
         </div>
       </div>
