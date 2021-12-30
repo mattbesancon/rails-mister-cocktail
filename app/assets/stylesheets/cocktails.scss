@@ -24,8 +24,9 @@
 }
 
 .cocktail-show-top-side-item {
-    display: flex;
-    justify-content: start;
+    width: 800px;
+    height: 50px;
+    position: relative;
 }
 
 .cocktail-show-top-side-link {
@@ -33,11 +34,12 @@
 }
 
 .cocktail-show-top-side-item.one {
+    display: inline-block;
     width: 200px;
     height: 40px;
     position: relative;
     background:white;
-    margin: 10px;
+    z-index: 2;
     p {
         left: 30px;
         top: 5px;
@@ -57,24 +59,14 @@
     border-bottom: 20px solid transparent;
 }
 
-.cocktail-show-top-side-item.one::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 20px solid #EAEAEA;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-}
-
 .cocktail-show-top-side-item.two {
+    display: inline-block;
     width: 200px;
     height: 40px;
     position: relative;
     background:white;
-    margin: 10px;
+    margin-left: 1px;
+    z-index: 1;
     p {
         left: 30px;
         top: 5px;
@@ -107,12 +99,14 @@
 }
 
 .cocktail-show-top-side-item.three {
+    display: inline-block;
     width: 200px;
     height: 40px;
     position: relative;
     background: #ffa500;
     color: white;
-    margin: 10px;
+    margin-left: 1px;
+    z-index: 0;
     p {
         left: 30px;
         top: 5px;
