@@ -56,7 +56,9 @@
       <div class="cocktail-show-right-side alc-ing">
         <div class="cocktail-show-right-side alc-ing title"><h3><%= @cocktail.name %></h3></div>
         <div class="cocktail-show-right-side alc-ing image">
-          <% if @cocktail.photo_alc.nil? == false %>
+          <% if @cocktail.photo_alc.nil? %>
+            <%= image_tag("no-image.jpeg", size: "250") %>
+          <% else %>
             <%= image_tag(@cocktail.photo_alc, size: "160x200") %>
           <% end %>
         </div>
@@ -64,17 +66,18 @@
       <div class="cocktail-show-right-side non-alc-ing">
         <div class="cocktail-show-right-side non-alc-ing title"><h3>Other ingredients</h3></div>
         <% @cocktail.doses.each do |cocktail| %>
-          <br>
             <% non_alc_ing = [] %>
             <% non_alc_ing << Ingredient.find_by_id(cocktail.ingredient_id) %>
-            <% non_alc_ing.each do |x| %>
-              <% if x.liquor == false %>
+            <% non_alc_ing.map! { |x| x if x.liquor == false } %>
+            <% non_alc_ing.compact.each do |x| %>
+              <% if x == [] %>
+                <% return %>
+              <% else %>
                 <div class="cocktail-show-right-side non-alc-ing item">
                   <%= image_tag(x.photo, size: "80x100") %>
                 </div>
               <% end %>
             <% end %>
-          <br>
         <% end %>
       </div>  
     </div>
