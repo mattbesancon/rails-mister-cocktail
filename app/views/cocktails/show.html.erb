@@ -87,7 +87,7 @@
       </div>
       <div class="cocktail-show-bottom-side-card">
         <div class="cocktail-show-bottom-side-card item">
-          <% card_cocktail0 = Cocktail.order('RANDOM()')[0] %>
+          <% card_cocktail0 = Cocktail.order(Arel.sql('random()'))[0] %>
           <div class="cocktail-show-bottom-side-card img">
             <%= image_tag(card_cocktail0.photo, size: "200x200") %>
           </div>
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
-          <% card_cocktail1 = Cocktail.order('RANDOM()')[1] %>
+          <% card_cocktail1 = Cocktail.order(Arel.sql('random()'))[1] %>
           <div class="cocktail-show-bottom-side-card img">
             <%= image_tag(card_cocktail1.photo, size: "200x200") %>
           </div>
@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
-          <% card_cocktail2 = Cocktail.order('RANDOM()')[2] %>
+          <% card_cocktail2 = Cocktail.order(Arel.sql('random()'))[2] %>
           <div class="cocktail-show-bottom-side-card img">
             <%= image_tag(card_cocktail2.photo, size: "200x200") %>
           </div>
@@ -114,7 +114,7 @@
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
-          <% card_cocktail3 = Cocktail.order('RANDOM()')[3] %>
+          <% card_cocktail3 = Cocktail.order(Arel.sql('random()'))[3] %>
           <div class="cocktail-show-bottom-side-card img">
             <%= image_tag(card_cocktail3.photo, size: "200x200") %>
           </div>
