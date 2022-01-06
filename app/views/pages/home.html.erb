@@ -16,9 +16,7 @@
         <%= carousel_for(Ingredient.new.image_urls) %>
     </div>
     <div class="home-all-cocktails-link">
-        <div class="home-all-cocktails-link-text">
-            <%= link_to "All the cocktails that you want & need!", cocktails_path %>
-        </div>
+        <%= link_to "All the cocktails that you want & need!", cocktails_path, class: "home-all-cocktails-link-text" %>
     </div>
     <div class="home-newsletter">  
         <div class="home-newsletter-container">
