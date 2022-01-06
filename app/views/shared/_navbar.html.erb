@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <div class="navbar-brand"><%= link_to "Atelier Cocktail", root_path %></div>
+    <div class="navbar-brand"><%= link_to "Atelier Cocktail", root_path, class: "navbar-brand-title" %></div>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,13 +13,13 @@
         <div class="navbar-newsletter"><%= link_to "Newsletter", new_newsletter_path, class: "btn btn-warning" %></div>
       </ul>
       <form class="d-flex">
-        <%= form_tag cocktails_path, id: "navbar-form", class: "form-inline my-2 my-lg-0", method: :get do %>
+        <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control mr-sm-2",
           placeholder: "Search a cocktail"
         %> 
-        <%= link_to "Search", cocktails_path, id: "submit-form", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <%= link_to "Search", cocktails_path, class: "btn btn-outline-dark my-2 my-sm-0" %>
         <% end %>
       </form>
     </div>

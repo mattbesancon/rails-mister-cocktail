@@ -15,7 +15,7 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+/*
 window.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("navbar-form");
 
@@ -23,3 +23,4 @@ window.addEventListener("DOMContentLoaded", function () {
     form.submit();
   });
 });
+*/
