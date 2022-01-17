@@ -1,6 +1,17 @@
 <br>
 <h1 class="card-cocktail-title">Our selection of cocktails</h1>
 <br>
+<form class="d-flex">
+  <%= form_tag cocktails_path, class: "form-inline my-2 my-lg-0", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control mr-sm-2",
+    placeholder: "Search a specific cocktail or ingredient"
+  %> 
+  <%= submit_tag "Search", id: "submit-form", class: "btn btn-outline-dark my-2 my-sm-0" %>
+  <% end %>
+</form>
+<br>
 <% @cocktails.each do |cocktail| %>
   <div class="card-cocktail">
     <div class="card-cocktail-img">

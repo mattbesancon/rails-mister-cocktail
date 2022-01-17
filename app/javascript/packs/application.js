@@ -15,11 +15,3 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
-window.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("submit-form").addEventListener("click", function (e) {
-    e.preventDefault();
-    window.location.href = "/cocktails";
-  });
-});
-
