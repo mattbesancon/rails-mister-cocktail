@@ -6,8 +6,7 @@ class NewslettersController < ApplicationController
   end
 
   def create
-    @newsletter = Newsletter.new(newsletter_params)
-    @newsletter.save
+    @newsletter = Newsletter.create(newsletter_params)
     if @newsletter.save
       NewsletterMailer.newsletter_email(@newsletter).deliver
       redirect_to root_path, notice: "Thank you, you can check your inbox, you should have received an email."
@@ -16,10 +15,10 @@ class NewslettersController < ApplicationController
     end
   end
 
-  def destroy
-    @newsletter.destroy
-    redirect_to newsletters_path
-  end
+  # def destroy
+  #  @newsletter.destroy
+  #  redirect_to newsletters_path
+  # end
 
   private
 
