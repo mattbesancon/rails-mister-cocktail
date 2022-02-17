@@ -92,7 +92,7 @@
             <%= image_tag(card_cocktail0.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= link_to "#{card_cocktail0.name}", cocktail_path(card_cocktail0) %></h6>
+            <h6><%= link_to "#{card_cocktail0.name}", cocktail_path(card_cocktail0), class: "cocktail-show-bottom-side-card title color" %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -101,7 +101,7 @@
             <%= image_tag(card_cocktail1.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= link_to "#{card_cocktail1.name}", cocktail_path(card_cocktail1) %></h6>
+            <h6><%= link_to "#{card_cocktail1.name}", cocktail_path(card_cocktail1), class: "cocktail-show-bottom-side-card title color" %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -110,7 +110,7 @@
             <%= image_tag(card_cocktail2.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= link_to "#{card_cocktail2.name}", cocktail_path(card_cocktail2) %></h6>
+            <h6><%= link_to "#{card_cocktail2.name}", cocktail_path(card_cocktail2), class: "cocktail-show-bottom-side-card title color" %></h6>
           </div>
         </div>
         <div class="cocktail-show-bottom-side-card item">
@@ -119,19 +119,19 @@
             <%= image_tag(card_cocktail3.photo, size: "200x200") %>
           </div>
           <div class="cocktail-show-bottom-side-card title">
-            <h6><%= link_to "#{card_cocktail3.name}", cocktail_path(card_cocktail3) %></h6>
+            <h6><%= link_to "#{card_cocktail3.name}", cocktail_path(card_cocktail3), class: "cocktail-show-bottom-side-card title color" %></h6>
           </div>
         </div>
       </div>
       <div class="cocktail-show-bottom-side previous next">
         <div class="cocktail-show-bottom-side previous"> 
           <% if @cocktail.previous %>
-            <%= link_to "< ", @cocktail.previous %>
+            <%= link_to "< ", @cocktail.previous, class: "cocktail-show-bottom-side previous color" %>
           <% end %>
         </div>
         <div class="cocktail-show-bottom-side next">
           <% if @cocktail.next %>
-            <%= link_to " >", @cocktail.next %>
+            <%= link_to " >", @cocktail.next, class: "cocktail-show-bottom-side next color" %>
           <% end %>
         </div>
       </div>

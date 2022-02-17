@@ -301,6 +301,10 @@
     bottom: 0;
 }
 
+.cocktail-show-bottom-side-card.title.color {
+    color: black;
+}
+
 .cocktail-show-bottom-side.previous.next {
     display: flex;
     align-items: center;
@@ -311,6 +315,14 @@
     margin-right: 10px;
 }
 
+.cocktail-show-bottom-side.previous.color {
+    color: black;
+}
+
 .cocktail-show-bottom-side.next {
     margin-left: 10px;
+}
+
+.cocktail-show-bottom-side.next.color {
+    color: black;
 }
