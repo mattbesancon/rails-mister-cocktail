@@ -1,7 +1,0 @@
-<h3 style="font-weight: bold;">Inscription to the Newsletter!</h3>
-<p>Every 3 months we are going to send you our selection of the best cocktails available:</p>
-<%= form_for Newsletter.new do |f| %>
-    <%= f.text_field :email, :placeholder => "Your email address", :class => "form-control input-sm" %>
-    <br>
-    <%= f.submit "Inscription", :class => "btn btn-outline-warning btn-sm" %>
-<% end %>

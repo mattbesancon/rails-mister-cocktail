@@ -47,29 +47,9 @@ html, body {
     color: orange;
 }
 
-.home-newsletter {
+.home-photo {
     margin: 0 -9999rem;
 	padding: 0.25rem 9999rem;
 	background: lightgrey;
-}
-
-.home-newsletter-container {
-    display: flex;
-    align-items: center;
-}
-
-.home-newsletter-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 310px;
-    height: 400px;
-    background-color: white;
-    padding: 20px;
-}
-
-.home-newsletter-photo {
     margin-left: 30px;
 }
-
