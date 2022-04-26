@@ -13,8 +13,9 @@
         <%= image_tag("homepage-cocktail.jpg", size: "912x500") %>
     </div>
     <div class="my-carousel">
-        <%= carousel_for(Ingredient.new.image_urls) %>
+        <%= carousel_for(Ingredient.all.select { |m| m.liquor == true }.map { |m| m.photo }) %>
     </div>
+
     <div class="home-all-cocktails-link">
         <%= link_to "All the cocktails that you want & need!", cocktails_path, class: "home-all-cocktails-link-text" %>
     </div>
